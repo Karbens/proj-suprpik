@@ -1,0 +1,1 @@
+[28-Oct-2013 20:07:02 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_header() in /home/super100/public_html/wp-content/themes/twentytwelve/tag.php on line 14

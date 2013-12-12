@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="1.6" type="template" client="site">
+	<name>Bet Republic Template V3.0</name>
+	<creationDate>05 August 2011</creationDate>
+	<author>Mike MacDonald</author>
+	<authorEmail>mike.macdonald@betrepublic.com</authorEmail>
+	<authorUrl>http://www.betrepublic.com</authorUrl>
+	<copyright>Bet Republic</copyright>
+	<license>Bet Republic</license>
+	<version>3.0</version>
+<description>Base Master Template</description>
+
+<files>
+<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>javascript</folder>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+</files>
+
+<positions>
+<position>navigation</position>
+<position>footer</position>
+</positions>
+
+</extension>

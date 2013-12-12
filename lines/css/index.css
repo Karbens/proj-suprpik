@@ -1,0 +1,73 @@
+/* CSS Document */
+body, table {
+	font-family:	Verdana, Arial, Helvetica, sans-serif;
+	font-size:		11px;
+	color:			#0e3056;
+}
+th, td {
+	text-align:center
+}
+#isUpdate {
+	display:none
+}
+.nfldatatitleheader { 
+	border:1px solid;
+	border-t:none;
+	background:#194772;
+	color:white
+}
+th .bk {
+	border:none;
+	background:none;
+	color:red
+}
+.sport {
+	font-size:200%;
+	margin:10px
+}
+.date {
+	font-size:120%;
+	margin:5px
+}
+table table tbody {background: #CFC}
+
+.firstrow, .secondrow {
+	padding-top:6px; 
+}
+
+.secondrow {
+	padding-bottom:10px;
+	border-bottom:1px solid;
+	background:white
+}
+.team {text-align:left;color: #003;font-size:105%;padding:5px}
+.dateandtime td{text-align:right; font-size:110%;color:#0942a2;padding-right:10px }
+.modified {background-color:#CF9;color:#060}
+
+#nfldatatitle , #nfldatatitle3 {display:none}
+
+.sport a {font-size:70%;padding-right:10px;color:#4455cc}
+
+
+
+table {margin:0;padding:0;background:white;border:none}
+
+
+table table  {border:1px solid #0e3056;margin:0;padding:0}
+table table td {border-left:1px solid; border-bottom:1px solid;padding:0;margin:0}
+table table tr {margin:0;padding:0}
+table table tr.teams1 {background:white; width:130px}
+table table td.teams1, table table td.teams0 {border-left:none;width:130px}
+table table td {min-height:40px;height:40px;max-height:50px}
+
+#innerb {  width:1132px ;overflow:hidden}
+.newdata0 {height:670px; overflow:scroll; width:1132px }
+
+.tabletwo2 {width:1120px;border:none;margin:0;padding:0}
+.tabletwo2 th {border:none;}
+
+col {width:55px}
+#nfldatatitle {background:white}  
+
+.c1 {width:140px}
+

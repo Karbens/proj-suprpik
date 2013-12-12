@@ -1,0 +1,309 @@
+
+.statsbg {
+background-image: url(../images/statsbg4.png);
+background-repeat: no-repeat;
+background-position: top center;
+}
+
+.selected {
+background-image: url(../images/statsnavbg4b.png);
+background-repeat: no-repeat;
+background-position: top left;
+}
+
+.statbar {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+font-weight:      bold;
+text-align:       left;
+vertical-align:       center;
+padding-left:     6px; 
+padding-right:     6px; 
+padding-top:     0px; 
+padding-bottom:     0px; 
+color:            #dee0ff;
+text-decoration:  none;
+}
+
+.signbg1 {
+background-image: url(../images/signbg1.png);
+background-repeat: no-repeat;
+background-position: top center;
+}
+
+.signbg {
+background-image: url(../images/signbg.png);
+background-repeat: no-repeat;
+background-position: top center;
+}
+
+.contentw {
+font-size:        13px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      normal;
+text-align:       left;
+padding-top:     0px; 
+padding-left:     10px; 
+padding-right:     10px; 
+color:            #ffffff;
+text-decoration:  none;
+}
+
+.contentb {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      normal;
+text-align:       left;
+padding-top:     0px; 
+padding-left:     10px; 
+padding-right:     10px; 
+color:            #000000;
+text-decoration:  none;
+}
+
+.dat {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      normal;
+text-align:       left;
+padding-top:     px; 
+padding-left:     3px; 
+padding-right:     3px; 
+background-color:    #ffffff;
+color:            #000000;
+text-decoration:  none;
+}
+
+.dath {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      bold;
+text-align:       left;
+padding-top:     px; 
+padding-left:     3px; 
+padding-right:     3px; 
+background-color:    #e1e1e1;
+text-decoration:  none;
+}
+
+.datt {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      bold;
+text-align:       left;
+padding-top:     px; 
+padding-left:     3px; 
+padding-right:     3px; 
+background-color:    #0172c2;
+color:            #ffffff;
+text-decoration:  none;
+}
+
+.slink {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      normal;
+text-align:       left;
+padding-top:     px; 
+padding-left:     3px; 
+padding-right:     3px; 
+color:            #0172c2;
+text-decoration:  underline;
+}
+
+.statnav {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      bold;
+text-align:       left;
+padding-top:     00px; 
+padding-left:     0px; 
+padding-right:     0px; 
+color:            #ffff00;
+text-decoration:  none;
+}
+
+.statnav:hover {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      bold;
+text-align:       left;
+padding-top:     00px; 
+padding-left:     0px; 
+padding-right:     0px; 
+color:            #ffffff;
+text-decoration:  underline;
+}
+
+.copy {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       top;
+font-weight:      normal;
+text-align:       center;
+padding-top:     10px; 
+padding-left:     0px; 
+padding-right:     0px; 
+color:            #7b7b7b;
+text-decoration:  none;
+}
+
+.n1 {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+font-weight:      bold;
+text-align:       left;
+vertical-align:       center;
+padding-left:     6px; 
+padding-right:     6px; 
+padding-top:     0px; 
+padding-bottom:     0px; 
+color:            #dee0ff;
+text-decoration:  none;
+}
+
+.n1:hover {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       center;
+font-weight:      bold;
+text-align:       left;
+padding-left:     6px; 
+padding-right:     6px; 
+color:            #ffffff;
+text-decoration:  underline;
+}
+
+.sm2 {	
+	font: bold 12px arial;
+	padding: 5px 10px;
+	color: #dee3fd;
+	text-align: center;
+	text-decoration: none}
+
+
+
+.n4 {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+font-weight:      bold;
+text-align:       left;
+vertical-align:       center;
+padding-left:     10px; 
+padding-right:     10px; 
+padding-top:     0px; 
+padding-bottom:     0px; 
+color:            #606060;
+text-decoration:  none;
+}
+
+.n4:hover {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:       center;
+font-weight:      bold;
+text-align:       left;
+padding-left:     10px; 
+padding-right:     10px; 
+color:            #000000;
+text-decoration:  underline;
+}
+
+.sbar {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+font-weight:      bold;
+text-align:       left;
+vertical-align:       center;
+padding-left:     10px; 
+padding-right:     10px; 
+padding-top:     0px; 
+padding-bottom:     0px; 
+color:            #ffffff;
+text-decoration:  none;
+}
+
+.sbar:hover {
+font-size:        11px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:   center;
+font-weight:      bold;
+text-align:       left;
+padding-left:     10px; 
+padding-right:    10px; 
+color:            #dee0ff;
+text-decoration:  underline;
+}
+
+.lines {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+font-weight:      bold;
+text-align:       left;
+vertical-align:   center;
+padding-left:     2px; 
+padding-right:    2px; 
+padding-top:      0px; 
+padding-bottom:   0px; 
+color:            #515ee1;
+text-decoration:  none;
+}
+
+.lines:hover {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:   center;
+font-weight:      bold;
+text-align:       left;
+padding-left:     2px; 
+padding-right:    2px; 
+color:            #CC0001;
+text-decoration:  underline;
+}
+
+.linemenu {
+font-size:        12px;
+font-family:      arial;
+font-style:       normal;
+vertical-align:   middle;
+font-weight:      bold;
+text-align:       left;
+padding-top:      0px; 
+padding-left:     10px; 
+padding-right:    10px; 
+color:            #000000;
+text-decoration:  none;
+}
+
+.calen {
+	position: 	  absolute;
+	z-index: 	  1;
+	left: 		  375px;
+	top: 		  250px;
+}

@@ -1,0 +1,2 @@
+[17-Aug-2013 19:09:46 America/Vancouver] PHP Warning:  preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Delimiter must not be alphanumeric or backslash in /home/super100/public_html/lines/db_func.php on line 2400
+[17-Aug-2013 19:10:04 America/Vancouver] PHP Warning:  preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Delimiter must not be alphanumeric or backslash in /home/super100/public_html/lines/db_func.php on line 2400

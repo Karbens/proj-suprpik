@@ -1,0 +1,9 @@
+[21-Nov-2013 22:06:07 America/Los_Angeles] PHP Warning:  file_get_contents(http://twitter.com/statuses/user_timeline.rss?screen_name=spbetting&amp;count=2) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/super100/public_html/sbnet/inc/twitter.php on line 9
+[21-Nov-2013 22:06:07 America/Los_Angeles] PHP Warning:  Variable passed to each() is not an array or object in /home/super100/public_html/sbnet/inc/twitter.php on line 29
+[21-Nov-2013 22:07:44 America/Los_Angeles] PHP Warning:  file_get_contents(http://twitter.com/statuses/user_timeline.rss?screen_name=spbetting&amp;count=2) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/super100/public_html/sbnet/inc/twitter.php on line 9
+[21-Nov-2013 22:07:44 America/Los_Angeles] PHP Warning:  Variable passed to each() is not an array or object in /home/super100/public_html/sbnet/inc/twitter.php on line 29
+[21-Nov-2013 22:15:02 America/Los_Angeles] PHP Warning:  file_get_contents(http://twitter.com/statuses/user_timeline.rss?screen_name=spbetting&amp;count=2) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ in /home/super100/public_html/sbnet/inc/twitter.php on line 9
+[21-Nov-2013 22:15:02 America/Los_Angeles] PHP Warning:  Variable passed to each() is not an array or object in /home/super100/public_html/sbnet/inc/twitter.php on line 29

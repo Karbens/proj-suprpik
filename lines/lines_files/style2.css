@@ -1,0 +1,1316 @@
+html, body {
+	width:100%;
+	margin:0;
+	font-family:"Helvetica",Arial,sans-serif;
+}
+
+#container {
+	width:983px;
+	_width:983px;
+	background: #FFFFFF;
+	vertical-align: top;
+}
+div { height:auto!important; }
+* html #container {
+width: 983px;
+_width:983px;
+}
+
+#cajatexto a {
+	color:blue;
+	text-decoration: underline;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 14px;
+	margin: 0;
+}
+
+#areacolumn9 .boxtitle .titles_link {
+	text-decoration: none;
+	color: #01457A;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.boxtitle .titles_link {
+	text-decoration: none;
+	color: #01457A;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+/*----------------Top Banner ------------------------*/
+
+
+#topbanner {
+	width:983px;
+	height:138px;
+	background:url(../images/TopBanner_01-over.jpg) no-repeat;
+}
+
+#flash {
+       width:355px;
+       height:105px;
+       padding-top:3px;
+      _padding-top:2px;
+       z-index:auto;
+}
+
+#menutop {
+	float: right;
+	display: blspaock;
+	margin-top: 10px;
+	height: 25px;
+   _height: 10px;
+	width: 512px;
+	_width:530;
+}
+
+#menutop ul {
+    height:25px;
+	_height:10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.divsearch{
+	line-height:2.5em;
+	width:4px;
+	height:21px;
+	display: block;
+	margin-right: 10px;
+	margin-left: 10px;
+	float: right;
+}
+
+#menutop li a  {
+
+	height: 25px;
+	line-height: 2.5em;
+	color: #FFFFFF;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 9px;
+	font-style: normal;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 0.5px;
+	text-align: center;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+}
+
+#menutop li a:hover  {
+color: #fff000;
+background:transparent;
+	text-decoration: none;
+}
+
+#menutop li
+{
+   display:block;
+	float: right;
+	height: 25px;
+	_height: 25px;
+	color: #FFFFFF;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 9px;
+	font-style: normal;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+#search {
+    _width:238px;
+    width:238px;
+	height:25px;
+	_height:10px;
+	float: right;
+}
+
+#search STRONG {
+font-size: 9px;
+_height: 25px;
+_padding-top:7px;
+_vertical-align:top;
+}
+
+form {
+   _height:15px;
+}
+	
+
+#botonforo {
+	float: right;
+	height: 34px;
+	width: 150px;
+	margin-top: 25px;
+	_margin-top: 5px;
+	margin-right:50px;
+	_margin-right:30px;
+}
+
+#botonforo a:hover {
+    background:none;
+	text-decoration: none;
+	border:0;
+}
+
+
+/*----------------Sportsbooks ------------------------*/
+
+#bdcontainer {
+ width:983px;
+ background-color: #ffffff;
+}
+
+#books {
+	float: left;
+	visibility: visible;
+	background-color: #7fa0bc;
+	padding-bottom: 5px;
+	width: 159px;
+	margin: 5px;
+	display:block;
+}
+
+#tptitle {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+	color:#01457a;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bolder;
+	text-decoration: none;
+	text-align: left;
+	padding-left:25px;
+	padding-top:3px;
+}
+
+#topbooks {
+	background:url(../images/Titulos_25.jpg) no-repeat;
+	height: 25px;
+	_height:26px;
+	margin-bottom:2px;
+	padding-top: 3px;
+}
+
+#pokertitle {
+        height:22px;
+	color:#01457a;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bolder;
+	text-decoration: none;
+	text-align: left;
+	padding-left:25px;
+	padding-top:3px;
+}
+
+#pokerbooks {
+	background:url(../images/Titulos_25.jpg) no-repeat;
+	height:25px;
+	margin-bottom:2px;
+	padding-top: 3px;
+	float:left;
+	width: 159px;
+	margin-top: 5px;
+	
+}
+
+#books .banners a {
+	color: #000000;
+	text-decoration: none;
+       font-weight: bold;
+}
+
+.banners {
+	float:left;
+	height:18px;
+	_height:16px;
+	_margin: 0px 2px -1px 2px;
+	width: 150px;
+	margin-top: 2px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+}
+
+.banners2 {
+	float:left;
+	margin-top: 10px;
+	margin-left: 20px;
+	_margin-left:10px;
+	width: 120px;
+}
+.banners3 {
+        float:left;
+	margin-top: 20px;
+	margin-left:5px;
+	_margin-left:2px;
+}
+
+
+/*---------------- Area 1 ------------------------*/
+
+#area1 {
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	vertical-align: top;
+	width: 359px;
+}
+
+#titulo {margin-bottom: 5px;
+}
+
+#titulo a {
+	/*font-family:Arial, Helvetica, sans-serif;*/
+	font-size:14px;
+	font-style: normal;
+	line-height: normal;
+	/*text-transform: capitalize;*/
+	color: #01457A;
+	text-decoration: none;
+}
+
+#titulo a:hover {
+	text-decoration: underline;
+	background-color: #FFFFFF;
+}
+
+
+#fotohead{
+	width:175px;
+	float:left;
+	display: block;
+}
+
+
+.caption {
+	font-size:9px;
+	float: left;
+	text-align: left;
+	_margin-left:1px;
+	font-weight: bold;
+	width:175px;
+}
+
+.textos{
+	color:#000000;
+	font-size: 11px;
+	line-height: 1.2em;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	padding: 3px 3px 0px 3px;
+	font-weight: normal;
+	font-variant: normal;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #004975;
+
+ }
+ 
+ 
+.boxcontent {
+    color:#000000;
+	font-size: 11px;
+	line-height: 1em;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+	padding: 0px 3px 0px 3px;
+	font-weight: normal;
+}
+
+.excerpt {
+	color:#000000;
+	font-size: 11px;
+	text-align:left;
+	}
+	
+a {
+    color: blue;
+	text-decoration: underline;
+	font-weight: bold;
+    font-size: 11px;
+}
+
+a:hover {
+        color:#FF0000;
+		text-decoration: underline;
+}	
+ 
+ 
+ #cajatexto {
+       width:170px;
+       margin-left:5px;
+       float:left;
+ }
+ 
+#areacolumn_2 .box{
+      margin-top:5px;
+      width:359px;
+      float:left;
+      padding-bottom:3px;
+      background:#E9ECEF url(../images/Titulos_bck.jpg) repeat-x top left;
+}
+
+#areacolumn_2 .boxcontent{
+      float:left;
+      padding:3px;
+}
+
+.box {
+background-color:#E9ECEF;
+}
+
+/*-----------------Blocks Customized--------------------*/
+
+#blockfeaturedarticle .boxtitle {
+   padding-top:5px;
+   padding-left:25px;
+   /*font-family: Arial, Helvetica, sans-serif;*/
+   font-size: 14px;
+   font-weight: bolder;
+   color:#01457a;
+   width:334px;
+   height:24px;
+  _height:29px;
+   background:url(../images/Titulos_25.jpg) top left;
+}
+
+#blockhanditools .boxtitle {
+   padding-top:5px;
+   padding-left:25px;
+   /*font-family: Arial, Helvetica, sans-serif;*/
+   font-size: 14px;
+   font-weight: bolder;
+   color:#01457a;
+   width:334px;
+   height:24px;
+   _height:29px;
+   background:url(../images/Titulos_25.jpg) top left;
+}
+
+
+#areacolumn_2 #blockbettingnews_a .box{
+      margin-top:5px;
+      width:179px;
+      float:left;
+      padding-bottom:3px;
+      background:#E9ECEF;
+}
+
+#areacolumn_2 #blockbettingnews_b .box{
+      margin-top:5px;
+      width:179px;
+      float:left;
+      padding-bottom:3px;
+      background:#E9ECEF;
+}
+
+#blockbettingnews_a .boxtitle {
+   padding-top:5px;
+   padding-left:25px;
+   /*font-family: Arial, Helvetica, sans-serif;*/
+   font-size: 13px;
+   font-weight: bolder;
+   color:#01457a;
+   width:154px;
+   _width:179px;
+   height:24px;
+   _height:29px;
+   background:url(../images/Titulos_25.jpg) top left;
+}
+
+#blockbettingnews_b .boxtitle {
+   padding-top:5px;
+   padding-left:25px;
+   /*font-family: Arial, Helvetica, sans-serif;*/
+   font-size: 13px;
+   font-weight: bolder;
+   color:#01457a;
+   width:154px;
+  _width:179px;
+   height:24px;
+   _height:29px;
+   background:url(../images/Titulos_25.jpg) top left;
+}
+
+#blockbettingnews .blogheadline {
+padding-left:3px;
+
+}
+
+
+#blockbettingnews .boxcontent {
+	color:#000000;
+	font-size: 10px;
+	line-height: 1.2em;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	padding: 3px 3px 0px 3px;
+	font-weight: normal;
+	font-variant: normal;
+	text-align: left;
+}
+
+#blockgamesodds .box {
+    width:191px;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	background-color: #E9ECEF;
+	margin-top: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #666666;
+	border: 1px solid #ADB7C4;
+ }
+ 
+ #blockgamesodds .boxtitle {
+       padding-top:5px;
+       padding-left:25px;
+       /*font-family: Arial, Helvetica, sans-serif;*/
+       font-size: 14px;
+       font-weight: bolder;
+       color:#fff;
+       width:166px;
+	   _width:191px;
+	   height:25px;
+	  _height:30px;
+       background:url(../images/Titulos_20.jpg);
+ }
+
+ #blockForumBox .box {
+    background-image: url(../images/Titulos_32.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin-top: 5px;
+	background-color: #F0CD68;
+	padding-bottom: 5px;
+ }
+ 
+ #blockForumBox .boxtitle {
+       background:url(../images/Titulos_20.jpg);
+	   padding-top:5px;
+       padding-left:25px;
+       /*font-family: Arial, Helvetica, sans-serif;*/
+       font-size: 14px;
+       font-weight: bolder;
+       color:#fff;
+       width:166px;
+	   _width:191px;
+       height:25px;
+	   _height:30px;
+ }
+
+#blockForumBox a {
+        color:#ff0000;
+}
+ 
+ 
+#blockspecialpromos .box {
+    width: 192px;
+	margin-top: 5px;
+	background-color: #E9ECEF;
+	padding-bottom: 5px;
+	align: center;
+} 
+
+#blockspecialpromos .boxtitle {
+       padding-top:5px;
+       padding-left:25px;
+       /*font-family: Arial, Helvetica, sans-serif;*/
+       font-size: 14px;
+       font-weight: bolder;
+       color:#01457a;
+	   width:166px;
+	   _width:192px;
+       height:25px;
+	   _height:30px;
+       background:url(../images/Titulos_25.jpg);
+}
+ 
+.titulos{
+       width:359px;
+       height:29px;
+}
+
+
+/*===================Sportsbook of the week =================================*/
+#bookweek {
+      width:359px;
+      height:131px;
+      margin-top:5px;
+      background:url(../images/book_43.gif) no-repeat;
+      float:left;
+}
+
+#booktext {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 11px;
+	line-height: 1.2em;
+	font-weight: normal;
+	font-variant: normal;
+	color: #333333;
+	padding-top: 20px;
+	padding-left: 135px;
+	padding-right:5px
+}
+
+#sotwpic {
+	float: left;
+	height: 121px;
+	width: 138px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+#sotwtxt {
+	float: left;
+	width: 205px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-size: 11px;
+}
+
+/*====================End============================*/
+
+/*---------------- Area 2 ------------------------*/
+ 
+#area2 {
+	margin:5px 5px 5px 5px;
+	width:240px;
+	float:left;
+ }
+ 
+ .titulos2{
+       margin:0 0 0 3px;
+       width:235px}
+ 
+.cajaarea2{
+	margin-top:5px;
+	float:left;
+	background-color:#E9ECEF;
+	height: 100%;
+	margin-bottom: 0px;
+	padding-bottom: 5px;
+ }
+ 
+ .fotoex {
+	width:48px;
+	height:64px;
+	float:left;
+	margin-top:5px;
+	margin-left: 3px;
+ }
+ 
+.cajatxt3{
+	font-size:11px;
+	float:left;
+	padding-left: 3px;
+	margin-top: 5px;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	height: 64px;
+	line-height: 1.2em;
+	color: #000000;
+	width: 180px;
+	padding-top: 5px;
+ }
+ 
+ .sponsor {
+       width:240px;
+       margin-top: 5px;
+ }
+ 
+ .sponsortop {
+   width:240px;
+ }
+ 
+ #sponsored {
+	width:240px;
+	background-color: #EFEED0;
+	margin-top: 5px;
+	float: left;
+ }
+
+ 
+ #blocksponsorlinks {
+	width:240px;
+	background-color: #EFEED0;
+	margin-top: 5px;
+	float: left;
+ }
+
+#books #areacolumn_5 #blocksponsorlinks {
+	width:155px;
+	background-color: #EFEED0;
+	margin-top: 5px;
+	float: left;
+	
+ }
+
+#books #areacolumn_5 #blocksponsorlinks .cajatxt4 {
+	width:145px;
+	/*font-family:Arial, Helvetica, sans-serif;*/
+	font-size:10px;
+	color:#333333;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #FF0000;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3;
+	padding-left: 3px;
+ }
+
+
+#books #areacolumn_5 #blocksponsorlinks .box {
+	width:159px;
+	background-color: #EFEED0;
+ } 
+ 
+ #blocksponsorlinks .box {
+	width:240px;
+	background-color: #EFEED0;
+ }
+
+#blocksponsorlinks .boxtitle {
+        height:7px;
+
+	}
+ 
+ #blocksponsorlinks .boxcontent {
+	/*font-family:Arial, Helvetica, sans-serif;*/
+	font-size:10px;
+	color:#333333;
+	padding-top: 3px;
+	line-height: 1em;
+ }
+
+/*-------------------Blogs------------------------*/
+ 
+#blogheadline2 {
+
+    width:340px;
+    padding:3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #7d98ad;
+ }
+
+#blocksponsorlinks #blogheadline {
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #ff0000;
+ }
+ 
+ #blogheadline {
+    padding:3px;	 
+ }
+ 
+.blogheadline a {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 11px;
+	font-weight: normal;
+	color: #000;
+	text-decoration: underline;    
+ }
+
+.blogheadline a:hover {
+        color: #fff
+}
+
+#blocksponsorlinks .boxtitle {
+	/*font-family:Arial, Helvetica, sans-serif;*/
+	color:#FF0000;
+	font-size:12px;
+	padding-top:2px;
+    margin-bottom:3px;
+	text-align: center;
+ }
+
+#blocksponsorlinks .blogheadline a {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 11px;
+    line-height: 1.5em;
+	font-weight: normal;
+	color: #ff0000;
+	text-decoration: underline;    
+ }
+
+
+#blockpressreleases .boxtitle {
+       padding-top:5px;
+        padding-left:25px;
+       /*font-family: Arial, Helvetica, sans-serif;*/
+       font-size: 14px;
+       font-weight: bolder;
+       color:#01457a;
+       width: 215px;
+	   _width: 240px;
+       height:25px;
+	   _height:30px;
+       background:url(../images/Titulos_49.jpg) no-repeat top left;
+} 
+
+#blockpressreleases .box{
+      width:240px;
+      margin-top:5px;
+      float:left;
+      background-color:#E9ECEF;
+}
+#blockpressreleases #blogheadline2 {
+    width:227px;
+    padding:3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #7d98ad;
+}
+ 
+.cajatxt4 {
+	width:232px;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size:10px;
+	color:#333333;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #FF0000;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3;
+	padding-left: 3px;
+ }
+
+.bannerarea2 {
+	clear: none;
+	float: none;
+	height: auto;
+	width: auto;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+
+/*---------------- Area 3 ------------------------*/
+ 
+#area3 {
+	width:192px;
+	float:left;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #01457A;
+	margin-top: 5px;
+	margin-right: 5px;
+	_margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0;
+ }
+
+#newsletter {
+width:192px;
+height:52px;
+background:url(../images/letter_11.jpg) no-repeat;
+}
+
+#feed {
+	
+}
+
+.tituloarea3 {
+width:191px;
+height:30px;
+}
+
+#forumbox {
+	background-image: url(../images/Titulos_32.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin-top: 5px;
+	background-color: #F0CD68;
+	padding-bottom: 5px;
+}
+
+.textoforum {
+	color:#990000;
+	font-size: 11px;
+	line-height: 1.5em;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: underline;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 5px;
+	padding-left: 3px;
+	}
+	
+#promos {
+	width: 192px;
+	margin-top: 5px;
+	background-color: #E9ECEF;
+	padding-bottom: 5px;
+}
+
+.promotxt {
+        font-size: 11px;
+	line-height: 1.2em;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-weight: normal;
+	font-variant: normal;
+        padding-right: 3px;
+	padding-left: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #004581;
+	padding-top: 3px;
+}
+
+.promotxt a {
+text-decoration: underline;
+}
+
+.spacer {
+	width:100%;
+	clear:both;
+}
+
+#cajita {
+padding-top:28px;
+padding-left: 10px;
+}
+
+.link2 {
+	font-size:13px;
+	color:#FFFFFF;
+	float: left;
+}
+
+.blockbannerder {
+margin-top:5px;
+}
+
+/*---------------- Area Footer ------------------------*/
+ #footercierre {
+	float: left;
+	width: 100%;
+	vertical-align: bottom;
+ }
+
+#areafooter_1 {
+	width:980px;
+	_width:970px;
+	height:24px;
+	float:left;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 9px;
+	font-style: normal;
+	line-height: 2em;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+	vertical-align: bottom;
+	text-align: center;
+	letter-spacing: normal;
+	margin-top: 5px;
+	padding-top: 3px;
+	background-position: center top;
+	background-image: url(../images/cierre_59.jpg);
+	background-repeat: no-repeat;
+}
+
+#areafooter_1 a {
+    color:#fff;
+}
+
+#areafooter_2 {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 9px;
+	color: #4e4f56;
+	float: left;
+	width: 950px;
+	_width: 940px;
+	padding-right: 5px;
+	padding-left: 15px;
+	_padding-left: 10px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	}
+	
+	/*------------------------------------Blog_Entry--------------------------------*/
+#elbody {
+	width:805px;
+	_width:795px;
+	float: left;
+	margin: 5px;
+	}
+	
+#blogentry {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	line-height: 1.5em;
+	color: #333333;
+	font-size: 10px;
+	}
+
+#bptitle {
+        /*height:50px;*/
+        font-size: 16px;
+		padding-bottom:2px;
+        margin-bottom:2px;
+        width: 100%;
+		color: #01457a;
+		font-weight:bold;
+}
+		
+	
+
+#bpexcerpt {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-style: italic;
+	line-height: 1.2em;
+	color: #000000;
+	font-size: 12px;
+}
+
+#entry {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 12px;
+	line-height: 1.2em;
+}
+
+#bebanner {
+	width:250px;
+	height:250px;
+	float:left;
+	margin: 5px;
+	display: block;
+}
+
+#autor {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size:9px;
+	text-align: left;
+	font-weight: bold;
+	color: #000000;
+}
+
+#postdate {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 12px;
+	color: #666666;
+	float: right;
+	height: 100%;
+}
+
+/*-----------------------------Landing Arenas---------------------------------*/	
+
+#arealandingarenas {
+width:660px;
+_width:655px;
+margin:5px 5px 5px 5px;
+float:left;
+}
+
+.headlinesarenas {
+margin-bottom:7px;
+}
+
+.titulo {
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 14px;
+	font-weight: bold;
+	color: #01457A;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #7FA0BC;
+}
+
+.books {
+    float: left;
+	visibility: visible;
+	background-color: #7fa0bc;
+	padding-bottom: 5px;
+	width: 159px;
+	margin: 5px;
+}
+
+.books #topbooks {
+	background:url(../images/Titulos_25.jpg) no-repeat;
+	width:159px;
+	_width:159px;
+	height: 26px;
+	_height:26px;
+	margin-bottom:2px;
+	padding-top: 3px;
+}
+
+/*===================== New Styles ================*/
+
+.a_more {
+	color:#01457A;
+	text-decoration: underline;
+	text-align: right;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+#entry a {
+	color: #003399;
+	text-decoration: underline;
+	font-weight: normal;
+	}
+	
+#entry a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+    background-color: transparent;
+	
+	}
+
+#arealandingarenas  .titulo a {
+        font-size: 12px;
+        
+	
+	}
+
+#arealandingarenas a:hover {
+        color: #FF0000;
+	text-decoration: underline;
+	font-weight: normal;
+	}
+	
+/*=================Arenas========================*/	
+
+#areaarenas {
+width:800px;
+margin:5px 5px 5px 5px;
+float:left;
+}
+
+#sportscontainer{
+	float: left;
+}
+
+#arenas{
+	float: left;
+	width: 520px;
+}
+#column9{
+	float: left;
+	width: 359px;
+}
+
+#column9 a {
+        color:#000000;
+	text-decoration: none;
+	font-weight: bold;
+        font-size: 11px;
+}
+
+
+#column10{
+	float: left;
+	width: 238px;
+margin-left:5px;
+}
+
+#column10 .boxtitle {
+width: 238px;
+}
+
+#column11{
+	float: left;
+	width: 161px;
+        margin-left:10px;
+}
+
+#column11 a {
+color:#000000;
+	text-decoration: none;
+	font-weight: bold;
+        font-size: 11px;
+}
+#column12{
+	float: left;
+	width: 275px;
+margin-left: 10px;
+margin-top:19px;
+
+}
+
+#column12 a {
+        color:#000000;
+	text-decoration: none;
+	font-weight: bold;
+        font-size: 11px;
+}
+
+#column12 .boxtitle{
+width: 250px;
+_width: 275px;
+}
+
+#column12 .boxcontent{
+width: 275px;
+}
+
+#column12 #blogheadline2 {
+width: 250px;
+}
+
+#column9 .boxtitle{
+width: 325px;
+}
+
+#column9 #blogheadline2 {
+width: 350px;
+}
+
+
+#column9 .box{
+      margin-top:5px;
+      width:359px;
+      float:left;
+      padding-bottom:3px;
+      background:#E9ECEF url(../images/Titulos_bck.jpg) repeat-x top left;
+}
+
+#cierretext a {color:#000000;
+	text-decoration: none;
+	font-weight: bold;
+        font-size: 9px;
+}
+
+ #blocksponsorlinks2 .box {
+	width:240px;
+	background-color: #EFEED0;
+	
+ }
+
+#blocksponsorlinks2 .boxtitle {
+	line-height: 2em;
+	color: #FF0000;  
+	text-align: center;
+	color: #FF0000;
+
+	}
+	
+#blockspecialpromos2 .box {
+    width: 192px;
+	background-color: #E9ECEF;
+	padding-bottom: 5px;
+} 
+
+#blockspecialpromos2 .boxtitle {
+       padding-top:5px;
+       padding-left:25px;
+       /*font-family: Arial, Helvetica, sans-serif;*/
+       font-size: 14px;
+       font-weight: bolder;
+       color:#01457a;
+	   width:166px;
+	   _width:192px;
+       height:25px;
+	   _height:30px;
+       background:url(../images/Titulos_25.jpg);
+}
+
+#blockhanditools2 .boxtitle {
+   padding-top:5px;
+   padding-left:25px;
+   font-size: 14px;
+   font-weight: bolder;
+   color:#01457a;
+   height:24px;
+   _height:29px;
+   background:url(../images/Titulos_25.jpg) top left;
+}
+
+
+/*======================blog_related_articles==============================*/
+
+#blog_related_articles {
+	float: left;
+	width: 250px;
+	margin-top: 20px;
+
+}
+
+#blog_related_articles .boxtitle {
+	padding-top:5px;
+	padding-left:25px;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+       font-size: 14px;
+	font-weight: bolder;
+	color:#01457a;
+	width:225px;
+	_width:192px;
+	height:25px;
+	_height:30px;
+	background:url(../images/Titulos_25.jpg);
+} 
+#blog_related_articles .box {
+	width:250px;
+	background-color: #E9ECEF;
+}
+
+
+#blog_related_articles .boxcontent {
+	padding-top: 5px;
+	line-height: 1.8em;
+}
+                              
+.fplat  {
+width: 246px;
+height: 92px;
+padding-top: 23px;
+align: center;
+padding-left: 0px;
+padding-right: 0px;
+background:url(../images/fplatbg.png) top center;
+} 
+
+.fgold  {
+width: 246px;
+height: 92px;
+padding-top: 23px;
+padding-left: 0px;
+padding-right: 0px;
+background:url(../images/fgoldbg.png) top center;
+}
+
+.fsilver  {
+width: 246px;
+height: 92px;
+padding-top: 23px;
+padding-left: 0px;
+padding-right: 0px;
+background:url(../images/fsilverbg.png) top center;
+}
+
+.fbronze  {
+width: 246px;
+height: 92px;
+padding-top: 23px;
+padding-left: 0px;
+padding-right: 0px;
+background:url(../images/fbronzebg.png) top center;
+}                
+
+.fwhat  {
+width: 246px;
+padding-right: 3px;
+}                                                                                                                         

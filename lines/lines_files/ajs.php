@@ -1,0 +1,3 @@
+var OX_c13f2e1b = '';
+OX_c13f2e1b += "<"+"iframe allowtransparency=\'true\' src=\'http://ff.connextra.com/BetOnline/selector/client?client=BetOnline&placement=theRX_120x60&tclk=[your-click-command-here]\' width=\'120\' height=\'60\' scrolling=\'no\' frameborder=\'0\' style=\'border-width:0\'><"+"/iframe><"+"div id=\'beacon_21c9e8c888\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://64.40.117.3/~therx/phpads/www/delivery/lg.php?bannerid=1673&amp;campaignid=219&amp;zoneid=0&amp;loc=http%3A%2F%2Fwww.therx.com%2Flines%2Flines.php%3Fsport%3Dncaabb%26period%3D0&amp;cb=21c9e8c888\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_c13f2e1b);

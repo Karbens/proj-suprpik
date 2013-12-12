@@ -1,0 +1,44 @@
+@font-face{
+	font-family:"Helvetica";
+	src:url('../fonts/Helvetica.eot?iefix') format("eot");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face{
+	font-family:"Helvetica";
+	src:url('../fonts/Helvetica.eot?iefix');
+	src:url('../fonts/Helvetica.woff') format("woff"),url('../fonts/Helvetica.ttf') format("truetype"),url('http://www.sportsbetting.com/media/fonts/Helvetica/d17bc040-9e8b-4397-8356-8153f4a64edf.svg#d17bc040-9e8b-4397-8356-8153f4a64edf') format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face{
+	font-family:"HelveticaNeueLight";
+	src:url('http://www.sportsbetting.com/media/fonts/HelveticaNeueLight/7de6b03f-1298-4bc2-89af-9d9da594008d.eot?iefix') format("eot");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face{
+	font-family:"HelveticaNeueLight";
+	src:url('../fonts/HelveticaNeueLight.eot?iefix');
+	src:url('../fonts/HelveticaNeueLight.woff') format("woff"),url('../fonts/HelveticaNeueLight.ttf') format("truetype"),url('http://www.sportsbetting.com/media/fonts/HelveticaNeueLight/5405647d-099e-47f7-9d4a-f8692e57a206.svg#5405647d-099e-47f7-9d4a-f8692e57a206') format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face{
+	font-family:"HelveticaNeueBold";
+	src:url('../fonts/HelveticaNeueBold.eot?iefix') format("eot");
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face{
+	font-family:"HelveticaNeueBold";
+	src:url('../fonts/HelveticaNeueBold.eot?iefix');
+	src:url('../fonts/HelveticaNeueBold.woff') format("woff"),url('../fonts/HelveticaNeueBold.ttf') format("truetype"),url('http://www.sportsbetting.com/media/fonts/HelveticaNeueBold/d90b3358-e1e2-4abb-ba96-356983a54c22.svg#d90b3358-e1e2-4abb-ba96-356983a54c22') format("svg");
+	font-weight:normal;
+	font-style:normal;
+}

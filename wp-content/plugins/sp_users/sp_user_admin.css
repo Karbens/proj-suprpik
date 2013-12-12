@@ -1,0 +1,26 @@
+.widefat th{
+	font-size: 11px;
+	white-space: nowrap;
+}
+.widefat td{
+	padding:7px 4px 8px;
+}
+th.sortable a, th.sorted a{
+	padding:7px 4px 8px;
+}
+
+.loggedIn{
+	background-color: #cfc;
+}
+
+.loginInfo{
+	font-size: 16px;
+}
+
+.loginInfo .label{
+	font-weight: bold;
+}
+#clickable td{
+	cursor: pointer;
+
+}

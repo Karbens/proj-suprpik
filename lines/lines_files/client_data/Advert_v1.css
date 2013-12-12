@@ -1,0 +1,7 @@
+body { margin:0; scroll:no; }
+
+.Element	{font-family: Arial, sans-serif; font-size: 10px; color: white; text-align: center; line-height:11px}
+.Selector	{font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 10px;; color: black;  font-weight:bold;}
+
+.Layer		{position:absolute; left: 0; top: 0; overflow: hidden; cursor:pointer; cursor:hand;}
+.NonClickableLayer {position:absolute; left: 0; top: 0; overflow: hidden; cursor:default;}

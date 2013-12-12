@@ -1,0 +1,86 @@
+body {
+	background: #E6E5DF;
+	margin-top: 0px;
+	font-size: 13px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #882b08;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+div.box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px dashed #EBE2D2;
+    margin: 0 auto;
+    padding: 20px;
+    width: 1200px;
+	text-align: left;
+}
+.cnamelink {
+    color: #246185;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+p.cdesc {
+    color: #5D5649;
+    font-size: 14px;
+}
+.cedate {
+    font-size: 12px;
+	font-weight: bold;
+}
+.cedateText {
+    color: #EF540A !important;
+    font-size: 12px;
+	font-weight: bold;
+}
+.ctagslink {
+    color: #340114 !important;
+    padding-top: 5px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.inputClass{
+		color:#000000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		font-weight: normal;
+		text-decoration: none;
+		background-color:#EAF3FB;
+		border-top-width: 1px;
+		border-right-width: 1px;
+		border-bottom-width: 1px;
+		border-left-width: 1px;
+		border-top-style: solid;
+		border-right-style: solid;
+		border-bottom-style: solid;
+		border-left-style: solid;
+		border-top-color: #999999;
+		border-right-color: #CCCCCC;
+		border-bottom-color: #CCCCCC;
+		border-left-color: #999999;
+	}
+.boldTxtStyle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+}
+.registertext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}

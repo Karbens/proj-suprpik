@@ -1,0 +1,6 @@
+[04-Nov-2013 15:43:48 America/Los_Angeles] PHP Fatal error:  Call to undefined function is_admin() in /home/super100/public_html/wp-content/plugins/contact-form-to-email/cp-admin-int-report.inc.php on line 3
+[05-Nov-2013 01:16:15 America/Los_Angeles] PHP Fatal error:  Call to undefined function is_admin() in /home/super100/public_html/wp-content/plugins/contact-form-to-email/cp-admin-int.inc.php on line 3
+[07-Nov-2013 20:26:00 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_option() in /home/super100/public_html/wp-content/plugins/contact-form-to-email/form-to-email.php on line 12
+[10-Nov-2013 18:53:03 America/Los_Angeles] PHP Fatal error:  Call to undefined function is_admin() in /home/super100/public_html/wp-content/plugins/contact-form-to-email/cp-admin-int-message-list.inc.php on line 3
+[14-Nov-2013 06:27:47 America/Los_Angeles] PHP Fatal error:  Class 'CP_CFTEMAIL_BaseClass' not found in /home/super100/public_html/wp-content/plugins/contact-form-to-email/cp-main-class.inc.php on line 3
+[22-Nov-2013 02:01:45 America/Los_Angeles] PHP Fatal error:  Call to undefined function is_admin() in /home/super100/public_html/wp-content/plugins/contact-form-to-email/cp-admin-int-list.inc.php on line 3

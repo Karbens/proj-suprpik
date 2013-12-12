@@ -1,0 +1,20 @@
+	.item-110, .item-109{
+		display:none;
+	}
+	#logout {
+		display:inline;
+		float:right;
+		margin:0 0 0 5px;
+	}
+	#logout a {
+		display:block;
+		width:74px;
+		height:37px;		
+		background:url('/templates/betrepublictemplatev3.0/images/logout-bg.jpg') no-repeat #f00;
+		padding:19px 0 0 12px;
+		color:#cdcdcd;
+		text-decoration:none;
+	}
+	#logout a:hover {
+		text-decoration:underline;
+	}

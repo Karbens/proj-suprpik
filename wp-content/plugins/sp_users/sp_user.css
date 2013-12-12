@@ -1,0 +1,49 @@
+.headerLinks{
+	float: right;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 25px
+}
+
+.sp_label{
+	display: block;
+	width: 370px;
+}
+
+.sp_label input, .sp_label .spValue, #captcha{
+	float:right;
+}
+.sp_label .spValue{
+	width: 206px;
+}
+.sp_label input[type="checkbox"]{
+	float:left;
+}
+.sp_label input[type="submit"]{
+	margin-right: 135px;
+}
+.editable .sp_input{
+	display: none;
+}
+
+.allowEdit {
+    border: 2px outset;
+    background: #fff;
+}
+
+#saveIt input{
+	height: 27px;
+	border: 2px outset;
+}
+
+#newCode{
+	float: right;
+	cursor: pointer;
+}
+
+.sp_label .required{
+	float: right;
+    left: 190px;
+    position: relative;
+    top: -5px;
+}

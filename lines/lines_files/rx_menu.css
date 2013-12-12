@@ -1,0 +1,226 @@
+/********************************************/
+/* An iFrame placed behind menus is needed  */
+/* to cover dropdown boxes in IE.           */
+/********************************************/
+#topBlockframe {
+	border:0; 
+	display: none; 
+	position: absolute;
+	z-index:999px;
+}
+
+/* <DIV> container for menus is floated */
+Div.rxMenuStyle
+{
+	background-image: url(../images/menu_03.jpg);
+	background-repeat: repeat-x;
+	/*float: left; */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding: 0;
+	vertical-align: middle;
+	height: 30px;
+	text-transform: uppercase;
+}
+/* All Lists */
+Div.rxMenuStyle ul
+{
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle; 
+}
+
+/* All anchors */
+Div.rxMenuStyle a, Div.rxMenuStyle a:visited
+{
+	border-color: #FFF;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	display: block;
+	color: #01457A;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 3em;
+	text-align: center;
+	text-decoration: none;
+	/*width:100%;*/
+}
+
+Div.rxMenuStyle a:hover
+{
+	background: transparent;
+	color: #FF6600;
+	text-decoration: none;
+}
+
+Div.rxMenuStyle ul li ul li a, Div.rxMenuStyle ul li ul li a:visited
+{
+	text-align: left;
+	padding-left: 3%;
+	/*width: 97%;
+	_width: 100%;	*/				/* IE hack for box model */
+}
+Div.rxMenuStyle ul li ul li a:hover
+{
+	background: #01457A;
+	/*width: 97%;
+	_width: 100%;	*/				/* IE hack for box model */
+}
+
+/* All List Items */
+Div.rxMenuStyle li
+{
+	height: 3em;					/* If height is on <a> it causes problems in IE */
+	/*position: relative;*/
+}
+
+/* 2nd Level Menu */
+Div.rxMenuStyle ul ul
+{
+	background: #C3CAD4;
+	border: 1px outset #FFF;
+	margin-top: 0px;
+	position: absolute;
+	width: 135px;					/* Default width for all 2nd level menus */
+	z-index: 50;
+        	
+}
+
+/* 3rd Level Menu appears to the right */
+Div.rxMenuStyle ul ul ul
+{
+    background: #C3CAD4;
+	left:101%;
+	position: relative;
+	/*top:200px;*/
+	width:100%;	
+		/* Default width for 3rd level is same as parent */	
+}
+
+
+/* Hide Submenus until hover event */
+Div.rxMenuStyle ul ul , 
+Div.rxMenuStyle ul  li:hover ul ul,
+Div.rxMenuStyle ul ul li:hover ul ul {
+	display: none;
+}
+
+/* IE workaround for :hover bug */
+Div.rxMenuStyle ul  li.over ul ul,
+Div.rxMenuStyle ul ul li.over ul ul 
+{
+	display: none;
+
+}
+
+/* Show Submenus on hover */
+Div.rxMenuStyle ul  li:hover ul, 
+
+Div.rxMenuStyle ul ul ul li:hover ul
+{
+	display: block;
+
+}
+
+Div.rxMenuStyle ul ul li:hover ul {
+
+        position: absolute;
+	display: block;
+margin-top:-22px
+}
+Div.rxMenuStyle ul ul li:hover ul li {
+
+
+position: relative;
+display: block;
+}
+
+/* IE workaround for :hover bug */
+Div.rxMenuStyle ul li.over ul,
+Div.rxMenuStyle ul ul ul li.over ul 
+{
+     display: block;
+}
+
+Div.rxMenuStyle ul ul li.over ul {
+position: absolute;
+	display: block;
+margin-top:-15px
+}
+
+/*============================================*/
+/* Special menu items                         */
+/*   e.g. <li>Item <a>xx</a> | <a>xx</a></li> */
+/*============================================*/
+Div.rxMenuStyle li.specialnav {
+	border-top: 1px solid white;
+	color: #5C5C5C;
+	padding-left: 3px;
+	text-align: left;
+}
+Div.rxMenuStyle li.specialnav a 
+
+{
+
+	border: 1px solid #C3CAD4;				/* same colour as background */
+	display: inline;
+	padding: 0px;
+	margin-top: 3px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+Div.rxMenuStyle li.specialnav a:hover
+{
+
+	background: transparent;
+	border: 1px dotted #000;
+}
+
+/*=================================*/
+/* Custom menu widths are set here */
+/*=================================*/
+#mainNav					{width: 985px;}
+#mainNav li.home 			{width: 35px;}
+#mainNav li.forum			{width: 35px;}
+#mainNav li.liveodds		{width: 70px; }
+#mainNav li.scores			{width: 50px; }
+#mainNav li.nfl				{width: 30px; }
+#mainNav li.nba				{width: 30px; }
+#mainNav li.mlb				{width: 30px; }
+#mainNav li.nhl				{width: 30px; }
+#mainNav li.ncaaf			{width: 35px; }
+#mainNav li.ncaab			{width: 40px; }
+#mainNav li.sportsbooks		{width: 88px; }
+#mainNav li.accuscore		{width: 100px; }
+#mainNav li.casinos			{width: 55px; }
+#mainNav li.poker			{width: 40px; }
+#mainNav li.poker ul		{width: 150px;}		/* 2nd level poker menu */
+#mainNav li.reviews			{width: 55px; }
+#mainNav li.releases		{width: 80px; }
+
+#mainNav li.div 
+{
+	height: 30px;
+	margin-top: 1px;
+	width: 12px;
+}
+#mainNav li.div2 
+{
+	height: 30px;
+	margin-top: 1px;
+	width: 30px;
+}
+
+#mainNav li ul li {
+height:20px;
+
+}
+
+#mainNav li ul li a {
+height:20px;
+line-height:2em;
+
+}                                                        

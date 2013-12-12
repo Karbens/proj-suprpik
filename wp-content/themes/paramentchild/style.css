@@ -1,0 +1,260 @@
+/*
+Theme Name:     Parament Child
+Theme URI:      
+Description:    My Parament Child Theme
+Author:         Joga Bassi
+Author URI:     
+Template:       parament
+Version:        1
+*/
+
+@import url("../parament/style.css");
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+}
+h2.entry-title a {
+}
+input, textarea {
+    background: #fff;
+}
+textarea {
+	width: 100%;
+	height: 200px;
+}
+header a, header {
+	color: #848484;
+}
+#page-wrap {
+    margin: 0 auto;
+}
+#branding {
+	background: url("http://superpicks.com/wp-content/uploads/2013/07/Super_Picks_Header.jpg") no-repeat scroll center center transparent;
+}
+
+#menu {
+	background: #FF7427;
+	/*background: -moz-linear-gradient( top, #FA9C3A 1%, #FF7427 100% );
+	background: -webkit-gradient( linear, left top, left bottom, color-stop( 1%, #FA9C3A ), color-stop( 100%, #FF7427 ) );
+	background: -webkit-linear-gradient( top, #FA9C3A 1%, #FF7427 100% );
+	background: -o-linear-gradient( top, #FA9C3A 1%, #FF7427 100% );
+	background: -ms-linear-gradient( top, #FA9C3A 1%, #FF7427 100% );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FA9C3A', endColorstr='#FF7427', GradientType=0 );
+	background: linear-gradient( top, #FA9C3A 1%, #FF7427 100% );*/
+	border: 0 !important;
+	border-radius: 0;
+	clear: both;
+	float: left;
+	margin: 0;
+	padding: 0 !important;
+	width: 100%;
+	box-shadow: none;
+}
+#menu ul {
+	width: 1020px;
+	font-size: 16px;
+}
+
+#menu a {
+	line-height: 30px;
+	color: #fff;
+	padding: 0 52px 0 40px;
+}
+
+#menu li {
+	margin: 0px !important;
+}
+
+#menu li:hover > a,
+#menu a:focus {
+	background: rgb(255,153,69);
+}
+#menu a:focus,
+#menu a:active,
+#menu li:hover > a {
+	color: #fff;
+}
+#menu .menu > li > a, #menu div.menu > ul > li > a
+{
+	border-radius: 0 !important;
+}
+#menu li.current-menu-item > a, #menu li.current-menu-ancestor > a, #menu li.current_page_item > a, #menu li.current_page_ancestor > a
+{
+	background: rgb(255,153,69);
+    color: #FFFFFF;
+}
+
+#post-nav a {
+    color: #000;
+}
+
+#contests a {
+	color: #000;
+}
+#site-title a {
+	font-family: "Open Sans",sans-serif;
+    font-size: 3em;
+}
+#access {
+	background: #FFFFFF; 
+	
+}
+
+#access a {
+text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	font-size: 1.2em;
+}
+
+#access .current-menu-item > a, #access .current-menu-ancestor > a, #access .current_page_item > a, #access .current_page_ancestor > a {
+	background: #F2EBDE;
+	border: solid 1px #BFB5A4;
+	box-shadow: inset 0px 0px 0px 1px #fff;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.9);
+}
+
+.entry-meta {
+    font-size: 14px;
+}
+
+#secondary
+{
+	background: #EEF5F6;
+	padding: 20px;
+	border: solid 1px #D6E0E2;
+	margin: 0 10px 0 0;
+	text-shadow: 1px 1px 0px rgba(255,255,255,1);
+	box-shadow: inset 0px 0px 0px 1px #fff;
+	
+}
+
+.widget a {
+	color: #515151;
+	font-size: 16px;
+	font-weight: bold;
+}
+.widget a:hover,
+.widget a:focus,
+.widget a:active {
+	text-decoration: none;
+}
+
+#site-generator 
+{
+	padding: 40px 40px 0 40px;
+	color: #302F2C;
+	background: none repeat scroll 0 0 #2C2C2C;
+	font-family: Kreon,serif;
+	border-top: none;
+	box-shadow: none;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.9);
+}
+
+.entry-title, .entry-title a {
+	margin-bottom: 1em;
+	font-size: 1em;
+	font-weight: bold;
+}
+.left-sidebar #secondary
+{
+	margin-left: 3%;
+}
+#sidebar {
+    float: left;
+    font-size: 12px;
+    margin: 20px 0px;
+    padding: 0;
+    position: relative;
+    right: 10px;
+    width: 320px;
+}
+#sidebar img {
+    height: auto;
+    max-width: 300px;
+}
+.widget {
+    border: medium none;
+	border-radius: 2px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 0;
+	margin: 0;
+}
+
+#main_page_ad {
+	text-align: center;
+	height:90px; 
+	padding: 15px 0 20px;
+}
+#container {
+    margin: 0 auto;
+    width: 1020px;
+	background: #fff;
+}
+.hentry {
+	border: none;
+	border-radius: 0 !important;
+	margin: 15px 15px 0 10px;
+	padding-bottom: 10px;
+}
+.hentry img {
+	float: left;
+	margin: 0 20px 10px 0;
+}
+#respond {
+	background: #fff;
+	border: none;
+	border-radius: 0 !important;
+	margin: 20px;
+}
+#respond .form-allowed-tags {
+	background: #fff;
+}
+.comment-form-url input {
+	left: 0;
+}
+.contest_table {
+	 width: 650px;
+}
+.contest_table tbody td, .contest_table input {
+    background-color: #fff;
+    color: #000000;
+}
+#wpadminbar #wp-admin-bar-wp-logo, #wpadminbar #wp-admin-bar-site-name {
+	display:none;
+}
+.entry-meta a {
+    color: #999;
+    text-decoration: none;
+}
+
+.blog article{
+	border-bottom: 1px solid #C4C4C4;
+}
+
+.arrow-down {
+    border-left: 6px solid rgba(0, 0, 0, 0);
+    border-right: 6px solid rgba(0, 0, 0, 0);
+    border-top: 6px solid #FFFFFF;
+    height: 0;
+    position: absolute;
+    right: 31px;
+    top: 13px;
+    width: 0;
+}
+
+#recent-posts .imageLink{
+	float: left;
+	margin-right: 15px;
+}
+
+#recent-posts li{
+	list-style: none;
+	border-bottom: 1px solid #C4C4C4;
+	padding: 20px 0 15px;
+}
+
+#recent-posts .timeAgo{
+	font-size: 16px;
+}

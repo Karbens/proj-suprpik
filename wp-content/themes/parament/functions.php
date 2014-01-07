@@ -263,3 +263,24 @@ add_theme_support( 'post-thumbnails' );
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'recent-thumb', 70, 70 ); //(cropped)
 }
+
+
+/** changing default wordpres email settings */
+ 
+add_filter('wp_mail_from', 'new_mail_from');
+add_filter('wp_mail_from_name', 'new_mail_from_name');
+ 
+function new_mail_from($old) {
+
+	// Get the site domain and get rid of www.
+		$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+		if ( substr( $sitename, 0, 4 ) == 'www.' ) {
+			$sitename = substr( $sitename, 4 );
+		}
+
+
+	return 'superpicks@' . $sitename;
+}
+function new_mail_from_name($old) {
+	return get_option( 'blogname' );
+}

@@ -1,14 +1,13 @@
 <?php
-$mosConfig_brdbprefix = 'br3_';
+
 $myPicksConfig = 'MY SUPER PICKS';
 $makePicksConfig = 'SUPER PICKS CONTEST ODDS';
 function getContests()
 {
-	global $mosConfig_brdbprefix;
 	
 	$cur_date = date('Y-m-d H:i:s');
 	$query = 'SELECT *
-			  FROM `'.$mosConfig_brdbprefix.'contests`
+			  FROM `'.MOSCONFIG_BRDPREFIX.'contests`
 			  WHERE start_date <= \''.$cur_date.'\'
 			  AND   end_date >= \''.$cur_date.'\'
 			  ORDER BY `contest_order`
@@ -28,9 +27,8 @@ function getContests()
 
 function getContestName($id)
 {
-	global $mosConfig_brdbprefix;
 	$query = 'SELECT contest_name
-			  FROM `'.$mosConfig_brdbprefix.'contests`
+			  FROM `'.MOSCONFIG_BRDPREFIX.'contests`
 			  WHERE contest_id = '.$id;
 	$result = @mysql_query($query);
 	$res = @mysql_fetch_row($result);
@@ -39,11 +37,10 @@ function getContestName($id)
 
 function getContestById($id)
 {
-	global $mosConfig_brdbprefix;
 	
 	$cur_date = date('Y-m-d H:i:s');
 	$query = 'SELECT *
-			  FROM `'.$mosConfig_brdbprefix.'contests`
+			  FROM `'.MOSCONFIG_BRDPREFIX.'contests`
 			  WHERE `contest_id` = '.$id;
 	$result = mysql_query($query);
 	$rows_count = (integer)@mysql_num_rows($result);
@@ -73,7 +70,7 @@ function contestDisplay($id)
 function contestDisplaySurvivor($id)
 {
 	global $myPicksConfig, $makePicksConfig;
-	$mosConfig_live_site = '/pro-picks/?option=com_contests&contest_id='.$id;
+	$mosConfig_live_site =  sprintf(MOSCONFIG_LIVE_SITE, $id);
 	
 	$curr_week = getCurrentWeek();
 	$user	= wp_get_current_user();
@@ -414,7 +411,8 @@ function getTeamsByWeek($week, $team='')
 function contestDisplaySpread($id)
 {
 	global $myPicksConfig, $makePicksConfig;
-	$mosConfig_live_site = '/pro-picks/?option=com_contests&contest_id='.$id;
+
+	$mosConfig_live_site =  sprintf(MOSCONFIG_LIVE_SITE, $id);
 	$curr_week = getCurrentWeek();
 	$user	= wp_get_current_user();
 	$now_date = date('Y-m-d H:i:s');
@@ -956,9 +954,8 @@ function displayWeeklySpreadPicks($week)
 
 function getContestTerms($id)
 {
-	global $mosConfig_brdbprefix;
 	$query = 'SELECT contest_terms
-			  FROM `'.$mosConfig_brdbprefix.'contests`
+			  FROM `'.MOSCONFIG_BRDPREFIX.'contests`
 			  WHERE contest_id = '.$id;
 	$result = @mysql_query($query);
 	$res = @mysql_fetch_row($result);
@@ -1007,10 +1004,9 @@ function getUserSurvivorStatus()
 	$curr_week = getCurrentWeek();
 	$past_week = $curr_week - 1;
 	$user	= wp_get_current_user();
-	global $mosConfig_brdbprefix;
 	
 	$query = 'SELECT user_picks
-			  FROM `'.$mosConfig_brdbprefix.'contests_picks`
+			  FROM `'.MOSCONFIG_BRDPREFIX.'contests_picks`
 			  WHERE contest_id = 1
 			  AND user_id = '.$user->ID.' 
 			  AND week_num = '.$past_week;
@@ -1023,7 +1019,7 @@ function getUserSurvivorStatus()
 	{
 	  $res = @mysql_fetch_row($result);
 	  $que2 = 'SELECT winning_team
-	  		   FROM `'.$mosConfig_brdbprefix.'contests_nfl`
+	  		   FROM `'.MOSCONFIG_BRDPREFIX.'contests_nfl`
 			   WHERE week_num = '.$past_week.' 
 			   AND winning_team = \''.$res[0].'\'';
 	  $res2 = mysql_query($que2);
@@ -1036,12 +1032,11 @@ function getPastSurvivorPicks()
 {
 	$curr_week = getCurrentWeek();
 	$user	= wp_get_current_user();
-	global $mosConfig_brdbprefix;
 	
 	$teams = array();
 	
 	$query = 'SELECT week_num, user_picks
-			  FROM `'.$mosConfig_brdbprefix.'contests_picks`
+			  FROM `'.MOSCONFIG_BRDPREFIX.'contests_picks`
 			  WHERE contest_id = 1
 			  AND user_id = '.$user->ID.' 
 			  AND week_num < '.$curr_week;

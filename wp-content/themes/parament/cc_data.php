@@ -36,7 +36,7 @@ if( isset($_POST['s_contest']) )
 			exit();
 		}else
 		{
-			$upd_que = 'UPDATE `'.$mosConfig_brdbprefix.'contests_picks`
+			$upd_que = 'UPDATE `'.MOSCONFIG_BRDPREFIX.'contests_picks`
 				    	SET user_picks = \''.$team.'\',
 							entry_date = \''.$now_date.'\',
 							end_date = \''.$end_date.'\'
@@ -44,7 +44,7 @@ if( isset($_POST['s_contest']) )
 		}
 	}else
 	{
-		$upd_que = "INSERT INTO `".$mosConfig_brdbprefix."contests_picks` 
+		$upd_que = "INSERT INTO `".MOSCONFIG_BRDPREFIX."contests_picks` 
 					(
 					`pick_id` , `user_id` , `contest_id` , `week_num` , `user_picks`, `entry_date`, `end_date`
 					)
@@ -84,7 +84,7 @@ if( isset($_POST['p_contest']) )
 			exit();
 		}else
 		{
-			$upd_que = "UPDATE `".$mosConfig_brdbprefix."contests_picks`
+			$upd_que = "UPDATE `".MOSCONFIG_BRDPREFIX."contests_picks`
 				    	SET user_picks = '".$teams_list."',
 							entry_date = '".$now_date."',
 							end_date = '".$end_date."'
@@ -92,7 +92,7 @@ if( isset($_POST['p_contest']) )
 		}
 	}else
 	{
-		$upd_que = "INSERT INTO `".$mosConfig_brdbprefix."contests_picks` 
+		$upd_que = "INSERT INTO `".MOSCONFIG_BRDPREFIX."contests_picks` 
 					(
 					`pick_id` , `user_id` , `contest_id` , `week_num` , `user_picks`, `entry_date`, `end_date`
 					)

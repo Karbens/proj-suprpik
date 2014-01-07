@@ -1,4 +1,4 @@
-<?
+<?php
 require_once('session.php');
 $contest_id = 0;
 if( isset($_GET['contest_id']) && valid_contest($_GET['contest_id']) )

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('db_func.php');
 tep_db_connect();
@@ -167,7 +167,7 @@ if(trim($_POST['username'])!="" &&  trim($_POST['password'])!="")
 							<br>
 							</td>
 						</tr>
-						<?
+						<?php
 						if($GLOBALS['ShowError'])
 						{
 							echo '<tr><td colspan="2" style="color:red; font-weigh:bold;">

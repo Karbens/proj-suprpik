@@ -8,9 +8,11 @@ Author: Joe Bassi
 Author URI: 
 License: GPLv2 or later
 */
+date_default_timezone_set('America/Los_Angeles');
 
 //hook for admin menu
 add_action('admin_menu', 'sp_contests_add');
+
 
 function sp_contests_add()
 {
@@ -21,55 +23,10 @@ function sp_contests_add()
 
 function sp_contests_page()
 {
+	$contest_id = isset($_GET['contest_id'])? (int)$_GET['contest_id'] : false;
+	$where_qry = $contest_id? ' where `contest_id`='.$contest_id : '';
 
-	//required for the contests functions
-	require_once( get_template_directory() . '/cc_functions.php');
-	
-	if( $_POST['is_posted'] )
-	{
-		//echo '<pre>'; print_r($_POST); echo'</pre>'; exit();
-		extract($_POST);
-		if(count($game) > 0 )
-		{
-			foreach($game as $gid => $gval)
-			{
-				
-				$upd = "UPDATE `br3_contests_nfl`
-						SET `ps_home` = '".$home[$gid]."',
-							`ps_away` = '".$away[$gid]."'
-						WHERE `week_num` = ".$week."
-						AND `game_id` = ".$gid;
-				@mysql_query($upd);
-			}
-			if( isset($publish) )
-			{
-				$pbd = "UPDATE `br3_contests_nfl`
-						SET `published` = 'yes'
-						WHERE `week_num` = ".$week;
-				@mysql_query($pbd);
-			}else
-			{
-				$wk_que = "SELECT *
-						   FROM `br3_contests_nfl`
-						   WHERE week_num = ".$week."
-						   ORDER BY game_date
-						   LIMIT 1";
-				$wk_query = mysql_query($wk_que);
-				$wk_res = mysql_fetch_assoc($wk_query);
-				$wk_date = $wk_res['game_date'];
-				$cu_date = date('Y-m-d H:i:s');
-				if($cu_date < $wk_date)
-				{
-					$pbd = "UPDATE `br3_contests_nfl`
-						    SET `published` = 'no'
-							WHERE `week_num` = ".$week;
-					@mysql_query($pbd);
-				}
-			}
-		}
-	}
-	
-	$contests_que = @mysql_query("SELECT * FROM `br3_contests` ");
+	$contests_que = @mysql_query("SELECT * FROM `br3_contests` ".$where_qry);
 	$contests = array();
 	if(@mysql_num_rows($contests_que) > 0)
 	{
@@ -78,12 +35,25 @@ function sp_contests_page()
 			$contests[] = $contests_res;
 		}
 	}
+
+	//dirty hack for the right function file
+	if($contest_id==3){
+		require_once( get_template_directory() . '/soccer/cc_functions.php');
+	}else{
+		//required for the contests functions
+		require_once( get_template_directory() . '/cc_functions.php');
+	}
+	
+	if( $_POST['is_posted'] ){
+		if(file_exists( plugin_dir_path( __FILE__ ).'/'.$contest_id.'_post.php' )){
+			require_once($contest_id.'_post.php');
+		}
+	}
+	
 	
 	?>
 	    <link rel="stylesheet" href="http://superpicks.com/settings/style.css" type="text/css" media="screen" charset="utf-8" />
 	    <link rel="stylesheet" href="http://superpicks.com/settings/stylesheets/site.css" type="text/css" media="screen" charset="utf-8" />
-	    
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
 	    <script src="http://superpicks.com/settings/jquery/iphone-style-checkboxes.js" type="text/javascript" charset="utf-8"></script>
 	    <style type="text/css">
 	    body 
@@ -107,136 +77,16 @@ function sp_contests_page()
 	  <?php if( isset($_POST['is_posted']) ) { ?>
 	    <header>
 	      <h1 id="h1_div">
-	        <a href="admin.php?page=sp-contests&contest_id=2&week=<?php echo $week; ?>">Updated, click to Reload</a>
+	        <a href="admin.php?page=sp-contests&contest_id=<?php echo $contest_id; ?><?php echo isset($week)?'&week='.$week:''; ?>">Updated, click to Reload</a>
 	      </h1>
 		</header>
 	  <?php } ?>
 	  
-	  <?php if( isset($_GET['contest_id']) && $_GET['contest_id'] == 2 ) { 
-	  	
-		$week = getCurrentWeek();
-		
-		if($_GET['week']>0 && $_GET['week']<18)$week = $_GET['week'];
-		
-		$week_que = 'SELECT * FROM `br3_contests_nfl` WHERE `week_num` = '.$week;
-		$week_query = mysql_query($week_que);
-		$week_arr = array();
-		if(@mysql_num_rows($week_query) > 0)
-		{
-			while($week_res = mysql_fetch_assoc($week_query))
-			{
-				$week_arr[] = $week_res;
-			}
-		}
-		
-		//disable publish checkbox if first game of the game has started
-		$wk_que1 = "SELECT *
-				   FROM `br3_contests_nfl`
-				   WHERE week_num = ".$week."
-				   ORDER BY `game_date`
-				   LIMIT 1";
-		$wk_query1 = mysql_query($wk_que1);
-		$wk_res1 = mysql_fetch_assoc($wk_query1);
-		$wk_date1 = $wk_res1['game_date'];
-		$cu_date1 = date('Y-m-d H:i:s');
-		$pub_disable = 0;
-		if($wk_date1 < $cu_date1)
-		{
-			$pub_disable = 1;
-		}
-	  ?>
-		<div id="frame">
-	      
-	        <article>
-	
-	          <h2>SP Contests - Super Picks Football</h2>
-			  <p>
-			  Pick Week:
-			  <?php
-			  for($i=1; $i<=17; $i++)
-			  {
-			  	if($i > 1) echo ' | ';
-				if($i != $week)echo '<a href="admin.php?page=sp-contests&contest_id=2&week='.$i.'">';
-				echo $i;
-				if($i != $week)echo '</a>';
-			  }
-			  ?>
-			  </p>
-			  
-			  <?php if(count($week_arr) > 0) { ?>
-		      <div class='table'>
-			  <form name="f1" id="f1" method="post">
-			  	<input type="hidden" name="is_posted" value="1">
-				<input type="hidden" name="week" value="<?php echo $week; ?>">
-	            <table>
-	              <tr>
-	                <th style='vertical-align: middle !important;'>
-	                  &nbsp;&nbsp;Visitor
-	                </th>
-					<th>&nbsp;&nbsp;</th>
-	                <th>
-					  &nbsp;&nbsp;Home
-	                </th>
-					<th>&nbsp;&nbsp;</th>
-	              </tr>
-				<?php
-				$published = 0;
-				foreach($week_arr as $wk)
-				{
-					if($wk['published'] == 'yes' && $published == 0)
-					{
-						$published = 1;
-					}
-				?>
-	              <tr>
-	                <td style='vertical-align: middle !important;'>
-	                  <?php echo $wk['away_team']; ?>&nbsp;&nbsp;
-					  <input type="hidden" name="game[<?php echo $wk['game_id']; ?>] value="<?php echo $wk['game_id']; ?>">
-					</td>
-					<td>
-					  <input type='textbox' name='away[<?php echo $wk['game_id']; ?>]' value='<?php echo $wk['ps_away']; ?>' size="5"/>
-	                </td>
-	                <td>
-	                  <?php echo $wk['home_team']; ?>&nbsp;&nbsp;
-					</td>
-					<td>
-					  <input type='textbox' name='home[<?php echo $wk['game_id']; ?>]' value='<?php echo $wk['ps_home']; ?>' size="5"/>
-	                </td>
-	              </tr>
-				<?php
-				}
-				?>
-				<tr>
-				  <td>&nbsp;</td>
-				  <td colspan="2"><span style="font-weight:bold;margin-left:20px;">Publish</span> <input type="checkbox" name="publish" value="1"<?php if($published == 1){ echo ' checked="checked" '; } if($pub_disable == 1){ echo ' disabled="disabled" '; }?>></td>
-				  <td>&nbsp;</td>
-				</tr>
-				<tr>
-				  <td>&nbsp;</td>
-				  <td colspan="2"><input type="Submit" name="sbt_button" id="sbt_button" value="Save Changes"></td>
-				  <td>&nbsp;</td>
-				</tr>
-	            </table>
-			  </form>
-	          </div>
-			  <?php } else { ?>
-			  <div class='table'>
-	            <table>
-	              <tr>
-	                <th style='vertical-align: middle !important;'>
-	                  &nbsp;&nbsp;No Data Found for Week <?php echo $week; ?>.
-	                </th>
-				  </tr>
-				</table>
-			  </div>
-			  <?php } ?>
-	
-	          
-	
-	        </article>
-	    </div>
-	  
-	  <?php } else { ?>
+	  <?php
+
+		if($contest_id && file_exists( plugin_dir_path( __FILE__ ).'/'.$contest_id.'.php')){
+			require_once($contest_id.'.php');
+		} else { ?>
 		<div id="frame">
 	      
 	        <article>
@@ -286,6 +136,157 @@ function sp_contests_page()
 	
 	        </article>
 	    </div>
-		<?php } ?>
-<?php
+<?php }
+
+}
+
+if(is_admin()){
+	wp_enqueue_style( 'jquery-ui.css.css', '//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css' );
+	wp_enqueue_style( 'timepicker.css', plugins_url( 'timepicker.css', __FILE__ ) );
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery-ui-datepicker');
+	wp_enqueue_script( 'jquery-ui-timepicker-addon', plugins_url( 'jquery-ui-timepicker-addon.js', __FILE__ ) );
+
+
+
+	//ajax delete for superpicks soccer
+	add_action( 'wp_ajax_soccer_delete', 'superpicks_soccer_delete' );
+
+	function superpicks_soccer_delete() {
+
+
+		if(isset($_POST['contest_id']) && (int)$_POST['contest_id']==3){
+			if(isset($_POST['game_id'])){
+				$where_qry = ' where `game_id`='.(int)$_POST['game_id'];
+				$query = "DELETE FROM `br3_contests_soccer` ".$where_qry;
+				if(mysql_query($query)){
+					echo json_encode('success');
+					exit;
+				}
+
+			}
+		}
+		echo json_encode('failure');
+		exit;
+	}
+
+	//ajax grading for superpicks soccer
+	add_action( 'wp_ajax_soccer_grade', 'superpicks_soccer_grade' );
+
+	function superpicks_soccer_grade() {
+
+		if(isset($_POST['contest_id']) && (int)$_POST['contest_id']==3){
+
+			
+			if(isset($_POST['week'], $_POST['scores'])){
+				$week = (int)$_POST['week'];
+				$scores = $_POST['scores'];
+				$output = array();
+				foreach ($scores as $key => $value) {
+
+					$query = 'SELECT * FROM `br3_contests_soccer` WHERE week_num = '.$week.' AND `game_id` = '.$key.' LIMIT 1';
+
+							$winner = mysql_query($query);
+							$winner_res = mysql_fetch_assoc($winner);
+
+							$home_handicap = (float)$winner_res['ps_home'];
+							$away_handicap = 0; // using one handicap only
+
+							$home_total = (int)$value['home'] + $home_handicap;
+							$away_total = (int)$value['away'] + $away_handicap;
+
+
+
+					if($home_total > $away_total){
+						$result =  $winner_res['home_team'];
+					}
+					if($away_total > $home_total){
+						$result =  $winner_res['away_team'];
+					}
+
+					if($home_total ==$away_total){
+						$result =  'Tie';
+					}
+					$update = "UPDATE `br3_contests_soccer` SET `away_score` = '".(int)$value['away']."',
+									    	`home_score` = '". (int)$value['home']. "',
+									    `winning_team` = '".$result."',
+									     `winning_spread_team` = '".$result."'
+										WHERE `week_num` = ".$week.' AND `game_id` = '.$key;
+
+							@mysql_query($update);
+							$output[$key] = $result;
+
+
+
+				}
+
+
+				//fetch members
+				$query = "SELECT * FROM `br3_contests_soccer_picks` WHERE week_num = '".$week."'";
+			
+				$members = mysql_query($query);
+
+				while($res = mysql_fetch_assoc($members)){
+
+
+
+					$query = 'SELECT *  FROM `br3_contests_soccer` WHERE `week_num` = ' . $week;
+
+					$user_picks_array = explode(',',$res['user_picks']);
+
+					$team_arr = $user_picks_array;
+
+					if(count($team_arr) > 1){
+						foreach($team_arr as $key => $team){
+							$team_arr[$key] = "'".$team."'";
+						}
+						$teams = implode(',',$team_arr);
+					
+						$query .= ' AND (`away_team` IN ('.$teams.') OR `home_team` IN ('.$teams.') )';
+
+					}
+
+					$query .= ' ORDER BY game_id';
+					//echo '<br>que: '.$query;
+
+					$result = mysql_query($query);
+					$rows_count = (integer)@mysql_num_rows($result);
+					$team_arr = array();
+					if($rows_count > 0){
+						while($res1 = mysql_fetch_assoc($result)){
+							$team_arr[] = $res1;
+						}
+					}
+
+					$w = 0;//wins
+					$l = 0;//losses
+					$t = 0;//ties
+
+					foreach($team_arr as $team){
+						$game_id = $team['game_id'];
+						if( in_array($team['winning_spread_team'], $user_picks_array))$w++;
+						if($team['winning_spread_team'] == 'Tie')$t++;
+					}
+					
+					$l = 5-($w+$t);
+
+					$points = $w  + ($t*0.5);
+
+					//fetch members
+					$query = "UPDATE `br3_contests_soccer_picks` SET `user_points` = '".$points."' WHERE pick_id = '".$res['pick_id']."'";
+				//	echo $query; die();
+
+					 mysql_query($query);
+				}
+
+
+				echo json_encode($output);
+				exit;
+			}
+
+		}
+		echo json_encode('failure');
+		exit;
+	}
+	
 }

@@ -4,7 +4,9 @@ if (isset($_REQUEST['contest_id']) && $_REQUEST['contest_id'] > 0) {
 	$contest_id = $_REQUEST['contest_id'];
 }
 
-if(isset($contest_id) && $contest_id > 0)
+	if(true){
+		echo '<p><br><br>The SuperPicks Football Championship is now closed. Thank you for participating and we will see you in September 2014.</p>';
+	}else if(isset($contest_id) && $contest_id > 0)
 {
 	if ( 0 == $user->ID )
 	{

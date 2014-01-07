@@ -9,10 +9,14 @@ error_reporting (E_ALL ^ E_NOTICE);
 //set the time zone to eastern, cause all gametimes use that
 date_default_timezone_set('America/New_York');
 
-$mosConfig_brdbprefix = 'br3_';
-//$mosConfig_live_site = '/pro-picks/';
+
+$slug = $post->post_name;
+
+define('MOSCONFIG_BRDPREFIX', 'br3_');
+define('MOSCONFIG_LIVE_SITE', '/'.$slug.'/?option=com_contests&contest_id=%s');
+
 $contest_id = 2;
-$mosConfig_live_site = '/pro-picks/?option=com_contests&contest_id='.$contest_id;
+$mosConfig_live_site = sprintf(MOSCONFIG_LIVE_SITE, $contest_id);
 require_once('cc_functions.php');
 
 //get current user

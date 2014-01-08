@@ -20,6 +20,7 @@ $tag_markup   = empty( $header_image ) ? '<h2 id="site-description">%2$s</h2>' :
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<link href="https://plus.google.com/108352162256411932297" rel="publisher"/>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<!--[if lt IE 9]>

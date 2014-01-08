@@ -61,6 +61,13 @@
 				<li><a href="mailto:feedback@sportsbetting.com">Feedback?</a></li>
 				<li>
 					<?php
+
+					if( ! ini_get('date.timezone') )
+						{
+							date_default_timezone_set('America/Los_Angeles');;
+						}
+
+
 						$now = time();
 						$nowEST = $now - (5*60*60);
 					?>

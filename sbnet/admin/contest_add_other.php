@@ -80,7 +80,7 @@
 	$contest_id = $_GET['contest_id'];
 	
 	
-	if( isset($_GET['contestDate']) && $contest_id > 1 && $_GET['createNew'] == 1)
+	if( isset($_GET['contestDate'],$_GET['createNew']) && $contest_id > 1 && $_GET['createNew'] == 1)
 	{
 		$contestDate = $_GET['contestDate'];
 		$cque = mysql_query("SELECT `event_id` FROM `events`

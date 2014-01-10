@@ -1,13 +1,11 @@
 <?php
 require_once('session.php');
-$contest_id = 0;
-if( isset($_GET['contest_id']) && valid_contest($_GET['contest_id']) )
-{
-	$contest_id = $_GET['contest_id'];
-}
+
+$contest_id = isset($_GET['contest_id'])? (int)$_GET['contest_id'] : 0;
+
 $cont_page = 'home.php';
-if($contest_id > 0)
-{
+
+if($contest_id > 0){
 	$contest_info_array = get_contests($contest_id);
 	$contest_info = $contest_info_array[0];
 	$cont_page = ($contest_info['contest_daily'] == 'Yes') ? 'contest_add.php' : 'contest_add_other.php';

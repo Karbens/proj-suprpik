@@ -2,13 +2,14 @@
 session_start();
 include('db_func.php');
 tep_db_connect();
+
 if(!empty($_SESSION['UserID']))
 {
 	header("location: index.php");
 }
 
-if(isset($_POST['username'], $_POST['password']) && trim($_POST['username'])!="" &&  trim($_POST['password'])!="")
-{
+if(isset($_POST['username'], $_POST['password'])){
+
 	$UserName = trim($_POST['username']);
 	$Password = md5(trim($_POST['password']));
 
@@ -19,12 +20,9 @@ if(isset($_POST['username'], $_POST['password']) && trim($_POST['username'])!=""
 			  AND `status` = 'Active'";
 	//echo $query;exit();
     $result = mysql_query($query);
-    if(@mysql_num_rows($result)<1)
-    {
+    if(@mysql_num_rows($result)<1){
 	  $ShowError = true;
-	}
-	else
-	{
+	}else{
 		$user_id = mysql_result($result,0,"id");
 		$ip = $_SERVER['REMOTE_ADDR'];
 		mysql_query("INSERT INTO `login_log` 

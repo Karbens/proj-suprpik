@@ -14,8 +14,7 @@ function tep_db_connect() {
 	 	$db_link = mysql_connect('192.168.29.102', 'freecontsbadm11', '59FwnzyeHRg7');
    		mysql_select_db('freecontsbdb');
 	}*/
-//	$db_link = mysql_connect('localhost', 'super100_dbmain', 'FgDvr436oy');
-	$db_link = mysql_connect('localhost', 'root', 'password');
+	$db_link = mysql_connect('localhost', 'super100_dbmain', 'FgDvr436oy');
    	mysql_select_db('super100_contests');
 	if (!$db_link) 
 	{
@@ -41,8 +40,7 @@ function get_sb_signups($all='') {
 	 	$sb_link = @mysql_connect('192.168.29.102:3306', 'joesbnet', 'dathUhuch8tr');//main site connection
 		@mysql_select_db('sbnetdb');
 	}*/
-//	$sb_link = @mysql_connect('localhost', 'super100_dbmain', 'FgDvr436oy');//main site connection
-	$sb_link = @mysql_connect('localhost', 'root', 'password');//main site connection
+	$sb_link = @mysql_connect('localhost', 'super100_dbmain', 'FgDvr436oy');//main site connection
 	@mysql_select_db('super100_sbnetdb');
     if (!$sb_link) 
 	{

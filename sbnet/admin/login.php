@@ -1,4 +1,4 @@
-<?php
+<?
 session_start();
 include('db_func.php');
 tep_db_connect();
@@ -7,7 +7,7 @@ if(!empty($_SESSION['UserID']))
 	header("location: index.php");
 }
 
-if(isset($_POST['username'], $_POST['password']) && trim($_POST['username'])!="" &&  trim($_POST['password'])!="")
+if(trim($_POST['username'])!="" &&  trim($_POST['password'])!="")
 {
 	$UserName = trim($_POST['username']);
 	$Password = md5(trim($_POST['password']));
@@ -167,8 +167,8 @@ if(isset($_POST['username'], $_POST['password']) && trim($_POST['username'])!=""
 							<br>
 							</td>
 						</tr>
-						<?php
-						if(isset($GLOBALS['ShowError']))
+						<?
+						if($GLOBALS['ShowError'])
 						{
 							echo '<tr><td colspan="2" style="color:red; font-weigh:bold;">
 									Invalid Username or Password,<br> 

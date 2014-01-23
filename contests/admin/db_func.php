@@ -7,12 +7,11 @@ date_default_timezone_set('America/New_York');
 function tep_db_connect() {
 	if( preg_match("/local/",$_SERVER['SERVER_NAME']) )
 	{
-      	$db_link = mysql_connect('localhost', 'root', 'password');
+      	$db_link = mysql_connect('localhost', 'root', 'mysql');
 		@mysql_select_db('freecontsbdb');
 	}else
 	{
-      	$db_link = mysql_connect('localhost', 'root', 'password');
-	 	// /$db_link = mysql_connect('localhost', 'super100_dbmain', 'FgDvr436oy');
+	 	$db_link = mysql_connect('localhost', 'super100_dbmain', 'FgDvr436oy');
 		@mysql_select_db('super100_contests');
 	}
 	if (!$db_link) 

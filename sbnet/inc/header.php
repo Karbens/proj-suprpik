@@ -1,3 +1,4 @@
+
 <section class="overlay" id="overlay">
 	<a href="#" class="close" title="Close"></a>
 	<div class="contentWrap"></div>
@@ -9,10 +10,10 @@
 		<div class="innerWidth">
 		
 			<ul class="left">
-				<li class="block"><a class="button highlight" href="https://www.sportsbetting.com/en/signup">Join now</a></li>
+				<li class="block"><a class="button highlight" href="reg.php">Join now</a></li>
 				<li class="block">
 					<div id="loginBox">
-						<form action="https://www.sportsbetting.com/en/auth/login" method="post" autocomplete="off">
+						<form action="" method="post" id="frm_login" autocomplete="off">
 							<input type="hidden" name="targetUrl" value="/" />
 								<span class="labeledField">
 									<label for="username">Username</label>
@@ -23,10 +24,36 @@
 									<label for="password">Password</label>
 									<input type="password" size="15" name="password" id="password" onkeyup="removeLabels();" />
 								</span>
-							<button type="submit">Login</button>
+								<button onclick="submit_login();" id="btn_submit" type="button" >Login</button>
 						</form>
+						<div id="error_div"></div>
 						<script language="javascript">
-						
+						function submit_login()
+						{
+							var unm = $('#username').val();
+							var pswd = $('#password').val();
+							if(unm=="" || pswd==""){
+								alert("Enter username and password");
+								return false;
+							}
+							$.ajax({
+							type: 'post',
+							url: 'login.php',
+							async: false,
+							data: { username: unm,
+									password: pswd},
+							success: function (msg) {
+							  if(msg==1){
+								 $('#error_div').addClass('error_class');   
+							     $('#error_div').html("Invalid username and password");   
+								 return false;
+							  }
+							  else if(msg==0){
+								window.location.href ="\contest.php";
+							  }
+							}
+						  });
+						}
 						function removeLabels()
 						{
 							var un = $('#username').val();

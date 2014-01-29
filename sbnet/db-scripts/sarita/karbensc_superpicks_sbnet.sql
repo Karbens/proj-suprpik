@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2014 at 11:38 AM
+-- Generation Time: Jan 29, 2014 at 05:44 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -23,6 +23,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customer_choices`
+--
+
+CREATE TABLE IF NOT EXISTS `customer_choices` (
+  `cust_choice_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ec_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `choice_type` tinyint(1) NOT NULL,
+  PRIMARY KEY (`cust_choice_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `customer_choices`
+--
+
+INSERT INTO `customer_choices` (`cust_choice_id`, `ec_id`, `customer_id`, `choice_type`) VALUES
+(1, 2867, 108, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `register_user`
 --
 
@@ -35,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `register_user` (
   `password` varchar(50) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`register_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `register_user`
@@ -51,7 +72,8 @@ INSERT INTO `register_user` (`register_id`, `firstname`, `lastname`, `email`, `u
 (27, 'Satish', 'Kamat', 'satish@gmail.com', 'satish', '948425aa3407a45c286531158d9e95d2', '2014-01-24 07:46:39'),
 (28, 'Pranay', 'Raikar', 'pranay@gmail.com', 'pranay', '1229730a374a5b5883240371478298dd', '2014-01-24 07:52:01'),
 (29, 'Minal', 'Kurana', 'minal@gmail.com', 'minal', '84f0df1b3bb451e62ba96989254d1134', '2014-01-24 09:09:51'),
-(30, 'Rahul', 'Mehta', 'rahul@yahoo.com', 'rahul', '2acb7811397a5c3bea8cba57b0388b79', '2014-01-25 06:41:26');
+(30, 'Rahul', 'Mehta', 'rahul@yahoo.com', 'rahul', '2acb7811397a5c3bea8cba57b0388b79', '2014-01-25 06:41:26'),
+(31, 'Raj', 'Mehta', 'raj@gmail.com', 'raj', 'cac5ff630494aa784ce97b9fafac2500', '2014-01-27 10:18:24');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

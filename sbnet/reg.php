@@ -1,4 +1,4 @@
-<?php include_once('admin/db_func.php'); 
+<?php include_once('sbnetadmin/db_func.php'); 
 tep_db_connect();
  if(isset($_POST['register'])){
   $firstname=$_POST['fname'];
@@ -11,7 +11,7 @@ tep_db_connect();
   else $password  = null;
 				
 				  
-	$query = "Insert into register_user(firstname,lastname,email,username,password) 
+	$query = "insert into sb_signups(first_name,last_name,email,username,password) 
 			  VALUES('$firstname','$lastname','$email','$username','$password')";
 	$result = mysql_query($query);
 	if($result)
@@ -136,17 +136,13 @@ tep_db_connect();
 							<label for="name">Confirm Password <span style="color:red">*</span> :</label>
 							<input type="password" name="confPassw" id="confPassw" size="40" />
 						</div>
-						
-				
-						 
-							<div  style="width:201px;float:left;margin:10px 0px 6px 174px"> 
-								<!--input name="register" type="image" id="register" src="images/register.png" onclick="return validateMember();"/--> 
-								<input class="button_class" name="register" type="submit" id="register" value="Submit" onclick=" return submit_form();"/>
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-								<input class="button_class" name="cancel" type="submit" id="cancel" value="Cancel"/>
-								
-							</div>
-						 
+						<div style="float: left; width: 83px; margin: 10px 47px 6px 222px;">
+							<input style="width: 86px;" id="register" class="button_class" type="submit" name="register" value="Submit" onclick=" return submit_form();">
+						</div>
+						<div style="float: left; width: 86px; margin: 10px 0px 6px;">
+							<input style="width: 86px;" id="cancel" class="button_class" type="submit" style="float: right;" name="cancel" value="Cancel">
+						</div>
+					</div> 
 					</div>
 				</form>
 			</div>

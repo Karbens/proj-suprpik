@@ -5,13 +5,14 @@ include_once('sbnetadmin/db_func.php');
 tep_db_connect();
 
 $contest_id = $_GET['contest'];
+$contest_name = get_contest_name($contest_id);
 $today = date('Y-m-d');
 $today1 = date("Y-m-d", strtotime($today));
-$curtime = date("G");
-/* AND `event_time` > '".$time."'"; */
+$time = date('h:i');
 $que = "SELECT * FROM `events` 
 		WHERE event_desc != '' AND `contest_id` = ".$contest_id."
-		AND `event_date` >= '".$today."' ORDER BY `event_order`, `event_id`";
+		AND `event_date` >= '".$today."' 
+		AND `event_time` > '".$time."' ORDER BY `event_order`, `event_id`";
 //echo $que;
 $query = mysql_query($que);
 if(@mysql_num_rows($query) > 0)
@@ -173,7 +174,7 @@ if(@mysql_num_rows($query) > 0)
 		<section id="hpMain" class="left">
 			<section id="featuredBets" class="tabs">
 				<header>
-					<h2>Penalty Kicks 2012 Contest</h2>
+					<h2><?php echo $contest_name; ?></h2>
 				</header>
 				<section class="wrapper" id="nfl-game-lines" style="">
 					<?php if(!empty($events)){ ?>
@@ -218,8 +219,8 @@ if(@mysql_num_rows($query) > 0)
 					<?php }
 					else{ ?>
 						<div class="event-container">
-							<div class="question">
-								<p>The Contest is now expired. Please check back for future contests. Good Luck!</p>
+							<div >
+								<p style="color:black;">The Contest is now expired. Please check back for future contests. Good Luck!</p>
 							</div>
 						</div>
 					<?php } ?>

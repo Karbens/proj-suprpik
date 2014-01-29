@@ -1,15 +1,23 @@
-<?php include_once('sbnetadmin/db_func.php'); 
+<?php 
+session_start();
+include_once('sbnetadmin/db_func.php'); 
 tep_db_connect(); 
+//print_r($_SESSION);
+//$customer_id = $_SESSION['logged_id'];
+$active_class1 = "active";
+if($_SESSION && $_SESSION['logged_id']){
 $today = date('Y-m-d');
 $today = date("Y-m-d H:i:s", strtotime($today));
-$query = "SELECT * FROM contests WHERE status='Online' AND contest_publish_date <= '$today' AND current_contest_date >= '$today'";
+
+	$query = "SELECT * FROM contests WHERE status='Online' AND contest_publish_date <= '$today' AND current_contest_date >= '$today'";
     $results = mysql_query($query);
     if(@mysql_num_rows($results)>0){
-	$resultset = array();
-while ($row = mysql_fetch_arraY($results)) {
-  $resultset[] = $row;
-}
+		$resultset = array();
+		while ($row = mysql_fetch_arraY($results)) {
+		  $resultset[] = $row;
+		}
 	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,27 +63,37 @@ while ($row = mysql_fetch_arraY($results)) {
 				<section class="category" id="nfl-game-lines" style="padding:0;">
 				
 			<div style="float:left;margin:0px;padding:0px;width:740px;height:auto;background:#ffffff;">		
-					<?php $count = 1;
-						if(!empty($resultset)){
-							foreach($resultset as $res){  ?>
-									<div style="float:left;margin:0px;padding:0px;width:246px;height:407px;">
-										<nav>
-											<ul style="width:246px;">
-												<li style="width:246px;"><a href="participation.php?contest=<?php echo $res['contest_id']; ?>"><?php echo $res['contest_name']; ?></a></li>
-												 
-											</ul>
-										</nav>						
-										<article style="height:367px; width:231px; margin:3px 0 3px 3px;">
-											<a href="participation.php?contest=<?php echo $res['contest_id']; ?>"><img src="i/no_contest_image.png" alt="The Streaker Contest"  style="margin:0px 0px 0px 0px;" /></a>
-												<div class="text">
-													<p><b><?php echo $res['contest_name']; ?></b></p>
-													<?php echo $res['contest_desc']; ?>
-													<p><a href="participation.php?contest=<?php echo $res['contest_id']; ?>">Check it out</a></p>
-												</div>
-										</article>
-									</div>
-							<?php }
-						} ?>
+					<?php if($_SESSION && $_SESSION['logged_id']){
+							$count = 1;
+							if(!empty($resultset)){
+								foreach($resultset as $res){  ?>
+										<div style="float:left;margin:0px;padding:0px;width:246px;height:407px;">
+											<nav>
+												<ul style="width:246px;">
+													<li style="width:246px;"><a href="participation.php?contest=<?php echo $res['contest_id']; ?>"><?php echo $res['contest_name']; ?></a></li>
+													 
+												</ul>
+											</nav>						
+											<article style="height:367px; width:231px; margin:3px 0 3px 3px;">
+												<a href="participation.php?contest=<?php echo $res['contest_id']; ?>"><img src="i/no_contest_image.png" alt="The Streaker Contest"  style="margin:0px 0px 0px 0px;" /></a>
+													<div class="text">
+														<p><b><?php echo $res['contest_name']; ?></b></p>
+														<?php echo $res['contest_desc']; ?>
+														<p><a href="participation.php?contest=<?php echo $res['contest_id']; ?>">Check it out</a></p>
+													</div>
+											</article>
+										</div>
+								<?php }
+							}
+					}
+					else{ 
+						echo "<div style='margin: 10px 0; color: #000000; font-weight: bold; text-align: center;'>Login to play free contest</div>"; ?>
+						<div class="event-container">
+							<div >
+								<p style="color:black;">The Contest is now expired. Please check back for future contests. Good Luck!</p>
+							</div>
+						</div>
+					<?php } ?>
 							
 			</div>	
 		

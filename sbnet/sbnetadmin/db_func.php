@@ -67,3 +67,17 @@ function get_sb_signups($all='') {
 	
 	return $ret;
 }
+
+function get_contest_name($contest_id){
+	$query = "select contest_name from contests where contest_id =".$contest_id;
+	//echo $query;
+	$result = mysql_query($query);
+	if(@mysql_num_rows($result) > 0){
+		while($res = mysql_fetch_row($result))
+		{
+			$contest_name = $res[0];
+			//print_r($res);
+			return $contest_name;
+		}
+	}
+}

@@ -1,4 +1,10 @@
-
+<style type="text/css">
+	.error_class{
+  color: #FF0000;
+  font-size: 12px;
+  margin: 0 1px;
+}
+</style>
 <section class="overlay" id="overlay">
 	<a href="#" class="close" title="Close"></a>
 	<div class="contentWrap"></div>
@@ -22,7 +28,7 @@
 
 								<span class="labeledField">
 									<label for="password">Password</label>
-									<input type="password" size="15" name="password" id="password" onkeyup="removeLabels();" />
+									<input  type="password" size="15" name="password" id="password" onkeyup="removeLabels();" />
 								</span>
 								<button onclick="submit_login();" id="btn_submit" type="button" >Login</button>
 						</form>
@@ -67,7 +73,25 @@
 						$(document).ready(function() {
 						
 						       removeLabels();
+							   /* login after entering password */
+							    $('form').each(function() {
+									$(this).find('#password').keypress(function(e) {
+										// Enter pressed?
+										if(e.which == 10 || e.which == 13) {
+											submit_login();
+										}
+									});
+								});
+								/* end */
+								 
+
 						});
+						
+						function submit_logout(){
+							$.post("logout.php",function(data){
+								window.location.href ="/sbnet";
+							});
+						}
 						
 						</script>
  
@@ -104,6 +128,9 @@
 						Eastern Time
 					</div>
 				</li>
+				<li class="block"><a style="cursor:pointer;"  onclick="submit_logout();" ><img src="i/logout.png" title="logout"/></a>
+				
+				</li>
 
 			</ul>
 			
@@ -120,14 +147,14 @@
 			<a id="logo" href="http://www.sportsbetting.com/en/home"></a>
 
 			<nav>
-				<ul>
+				<ul> <!--class="active"-->
 					<li ><a href="http://www.sportsbetting.com/en/sports">Sportsbook</a></li>
 					<li ><a href="http://www.sportsbetting.com/en/live-betting">Live Betting</a></li>
 					<li ><a href="http://www.sportsbetting.com/en/casino">Casino</a></li>
 					<li ><a href="http://www.sportsbetting.com/en/live-dealer">Live Dealer</a></li>
 					<li ><a href="http://www.sportsbetting.com/en/poker">Poker</a></li>
-					<li ><a href="http://www.sportsbetting.com/en/promotions">Promotions</a></li>
-					<li class="active"><a href="http://freecontests.sportsbetting.com">Contests</a></li>
+					<li class="<?php echo $active_class; ?>"><a href="http://www.sportsbetting.com/en/promotions">Promotions</a></li>
+					<li class="<?php echo $active_class1; ?>"><a href="contest.php">Contests</a></li>
 					<li><a href="http://blog.sportsbetting.com/">Blog</a></li>
 				</ul>
 			</nav>

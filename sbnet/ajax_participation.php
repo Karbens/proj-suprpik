@@ -22,6 +22,5 @@ if(isset($_POST))
 	header('Location: /contest.php');
 	exit;
 	
-}
-session_destroy();	 
+} 
 ?>

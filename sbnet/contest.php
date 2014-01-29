@@ -88,11 +88,11 @@ $today = date("Y-m-d H:i:s", strtotime($today));
 					}
 					else{ 
 						echo "<div style='margin: 10px 0; color: #000000; font-weight: bold; text-align: center;'>Login to play free contest</div>"; ?>
-						<div class="event-container">
+						<!--<div class="event-container">
 							<div >
 								<p style="color:black;">The Contest is now expired. Please check back for future contests. Good Luck!</p>
 							</div>
-						</div>
+						</div>-->
 					<?php } ?>
 							
 			</div>	

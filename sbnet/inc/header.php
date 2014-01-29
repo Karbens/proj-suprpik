@@ -153,7 +153,7 @@
 					<li ><a href="http://www.sportsbetting.com/en/casino">Casino</a></li>
 					<li ><a href="http://www.sportsbetting.com/en/live-dealer">Live Dealer</a></li>
 					<li ><a href="http://www.sportsbetting.com/en/poker">Poker</a></li>
-					<li class="<?php echo $active_class; ?>"><a href="http://www.sportsbetting.com/en/promotions">Promotions</a></li>
+					<li class=""><a href="http://www.sportsbetting.com/en/promotions">Promotions</a></li>
 					<li class="<?php echo $active_class1; ?>"><a href="contest.php">Contests</a></li>
 					<li><a href="http://blog.sportsbetting.com/">Blog</a></li>
 				</ul>

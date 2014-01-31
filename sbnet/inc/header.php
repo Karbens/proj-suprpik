@@ -4,6 +4,12 @@
   font-size: 12px;
   margin: 0 1px;
 }
+
+#frm_login label{
+	display: none;
+}
+.logout{color:#fff; text-decoration: none}
+
 </style>
 <section class="overlay" id="overlay">
 	<a href="#" class="close" title="Close"></a>
@@ -11,92 +17,96 @@
 </section>
 
 <header id="header">
-	
 	<section id="accountPane">
 		<div class="innerWidth">
 		
 			<ul class="left">
-				<li class="block"><a class="button highlight" href="reg.php">Join now</a></li>
-				<li class="block">
-					<div id="loginBox">
-						<form action="" method="post" id="frm_login" autocomplete="off">
-							<input type="hidden" name="targetUrl" value="/" />
-								<span class="labeledField">
-									<label for="username">Username</label>
-									<input type="text" size="15" name="username" id="username" onkeyup="removeLabels();" />
-								</span>
+			<?php if(isset($_SESSION['user'])){ ?>
+				Welcome <?php echo $_SESSION['user']['username']; ?> 
+				 | <a class="logout" href="logout.php">Logout</a>
+				<?php	}else{ ?>
+					<li class="block"><a class="button highlight" href="reg.php">Join now</a></li>
+					<li class="block">
+						<div id="loginBox">
+							<form action="" method="post" id="frm_login" autocomplete="off">
+								<input type="hidden" name="targetUrl" value="/" />
+									<span class="labeledField">
+										<label for="username">Username</label>
+										<input type="text" size="15" placeholder="Username" name="username" id="username" />
+									</span>
 
-								<span class="labeledField">
-									<label for="password">Password</label>
-									<input  type="password" size="15" name="password" id="password" onkeyup="removeLabels();" />
-								</span>
-								<button onclick="submit_login();" id="btn_submit" type="button" >Login</button>
-						</form>
-						<div id="error_div"></div>
-						<script language="javascript">
-						function submit_login()
-						{
-							var unm = $('#username').val();
-							var pswd = $('#password').val();
-							if(unm=="" || pswd==""){
-								alert("Enter username and password");
-								return false;
+									<span class="labeledField">
+										<label for="password">Password</label>
+										<input  type="password" placeholder="Password" size="15" name="password" id="password" />
+									</span>
+									<button onclick="submit_login();" id="btn_submit" type="button" >Login</button>
+							</form>
+							<div id="error_div"></div>
+							<script language="javascript">
+							function submit_login()
+							{
+								var unm = $('#username').val();
+								var pswd = $('#password').val();
+								if(unm=="" || pswd==""){
+									alert("Enter username and password");
+									return false;
+								}
+								$.ajax({
+								type: 'post',
+								url: 'login.php',
+								async: false,
+								data: { username: unm,
+										password: pswd},
+								success: function (msg) {
+								  if(msg==1){
+									 $('#error_div').addClass('error_class');   
+								     $('#error_div').html("Invalid username and password");   
+									 return false;
+								  }
+								  else if(msg==0){
+									window.location.href ="\contest.php";
+								  }
+								}
+							  });
 							}
-							$.ajax({
-							type: 'post',
-							url: 'login.php',
-							async: false,
-							data: { username: unm,
-									password: pswd},
-							success: function (msg) {
-							  if(msg==1){
-								 $('#error_div').addClass('error_class');   
-							     $('#error_div').html("Invalid username and password");   
-								 return false;
-							  }
-							  else if(msg==0){
-								window.location.href ="\contest.php";
-							  }
+							function removeLabels()
+							{
+								var un = $('#username').val();
+								var ps = $('#password').val();
+								$("label").attr("for","username").css("display","block");
+								$("label").attr("for","password").css("display","block");
+								if( un != '')$("label").attr("for","username").css("display","none");
+								if( ps != '')$("label").attr("for","password").css("display","none");
 							}
-						  });
-						}
-						function removeLabels()
-						{
-							var un = $('#username').val();
-							var ps = $('#password').val();
-							$("label").attr("for","username").css("display","block");
-							$("label").attr("for","password").css("display","block");
-							if( un != '')$("label").attr("for","username").css("display","none");
-							if( ps != '')$("label").attr("for","password").css("display","none");
-						}
 
-						$(document).ready(function() {
-						
-						       removeLabels();
-							   /* login after entering password */
-							    $('form').each(function() {
-									$(this).find('#password').keypress(function(e) {
-										// Enter pressed?
-										if(e.which == 10 || e.which == 13) {
-											submit_login();
-										}
+							$(document).ready(function() {
+							
+							   //    removeLabels();
+								   /* login after entering password */
+								    $('form').each(function() {
+										$(this).find('#password').keypress(function(e) {
+											// Enter pressed?
+											if(e.which == 10 || e.which == 13) {
+												submit_login();
+											}
+										});
 									});
-								});
-								/* end */
-								 
+									/* end */
+									 
 
-						});
-						
-						function submit_logout(){
-							$.post("logout.php",function(data){
-								window.location.href ="/sbnet";
 							});
-						}
-						
-						</script>
- 
-					</div>
-				</li>
+							
+							/*function submit_logout(){
+								$.post("logout.php",function(data){
+									window.location.href ="/sbnet";
+								});
+							}*/
+							
+							</script>
+	 
+						</div>
+					</li>
+			<?php } ?>
 			</ul>
 		
 			<ul class="right">
@@ -127,9 +137,6 @@
 						<div class="clock"><?php echo date('g:ia', $nowEST); ?></div>
 						Eastern Time
 					</div>
-				</li>
-				<li class="block"><a style="cursor:pointer;"  onclick="submit_logout();" ><img src="i/logout.png" title="logout"/></a>
-				
 				</li>
 
 			</ul>

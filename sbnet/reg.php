@@ -1,29 +1,75 @@
 <?php include_once('sbnetadmin/db_func.php'); 
 tep_db_connect();
+ 
+ $errors = array();
+
  if(isset($_POST['register'])){
-  $firstname=$_POST['fname'];
-  $lastname = $_POST['lname'];
-  $email = $_POST['email'];
-  $username = $_POST['uname'];
-  if(!empty($_POST['passw'])){
-	$password = md5($_POST['passw']);
+
+//TODO: database insertions to be escaped
+
+//TODO: check for duplicate entries.
+
+
+  $firstname = mysql_real_escape_string(trim($_POST['fname']));
+  $lastname = mysql_real_escape_string(trim($_POST['lname']));
+  $email = mysql_real_escape_string(trim($_POST['email']));
+  $username = mysql_real_escape_string(trim($_POST['uname']));
+  $password = trim($_POST['passw']);
+  $confirm = trim($_POST['confPassw']);
+
+  if(empty($firstname)){
+  	$errors[] = 'Please enter your first name.';
   }
-  else $password  = null;
-				
-				  
-	$query = "insert into sb_signups(first_name,last_name,email,username,password) 
-			  VALUES('$firstname','$lastname','$email','$username','$password')";
-	$result = mysql_query($query);
-	if($result)
-	{
-	$id = mysql_insert_id();
-	header('Location: /sbnet');
-	exit;
-	} 
-	else
-	{
-	   die(mysql_error());
-	}
+
+  if(empty($lastname)){
+  	$errors[] = 'Please enter your last name.';
+  }
+
+  if(empty($email)){
+  	$errors[] = 'Please enter your email.';
+  }
+
+  if(empty($username)){
+  	$errors[] = 'Please enter a username.';
+  }
+
+  if(empty($password)){
+  	$errors[] = 'Please enter a password.';
+  }
+
+  if($password!=$confirm){
+  	$errors[] = 'Passwords do not match.';
+  }
+
+  //check duplicates
+
+  $query = "SELECT * FROM `sb_signups` WHERE `email` = '$email'";
+  $result = mysql_query($query);
+
+  if(mysql_num_rows($result) > 0){
+  	$errors[] = 'Email already exists.';
+  }
+
+  $query = "SELECT * FROM `sb_signups` WHERE `username` = '$username'";
+  $result = mysql_query($query);
+
+  if(mysql_num_rows($result) > 0){
+  	$errors[] = 'Username already exists. Please try a different name';
+  }
+
+  if(count($errors) == 0 ){
+		$password = md5($password);
+					  
+		$query = "insert into sb_signups(first_name,last_name,email,username,password) 
+				  VALUES('$firstname','$lastname','$email','$username','$password')";
+		$result = mysql_query($query);
+		if($result)
+		{
+		$id = mysql_insert_id();
+		header('Location: index.php');
+		exit;
+		} 
+  }
 	
 }
 ?>
@@ -89,6 +135,7 @@ tep_db_connect();
 		.text p b { color:#bd580a; }
 		.text a { color:#bd580a; text-decoration:none; }
 		.text a:hover { text-decoration:underline; }
+		#error_div{color: #f00}
 	</style>
 </head>
 <?php include('inc/header.php'); ?>
@@ -104,10 +151,19 @@ tep_db_connect();
 			<div id="registerMemberDiv">
 				<img alt="Join Now!" src="i/register.png">
 				<!--<div style=" margin-left: 180px; font-family:Verdana, Geneva, sans-serif; font-size:16px; font-weight:bold;">REGISTER MEMEBER</div>-->
-				<div id="error_div"></div>
+				<div id="error_div">
+
+
+				<?php if(count($errors)){
+
+					foreach($errors as $error) echo $error . '<br/>';
+
+				}
+				?>
+				</div>
 				<div id="reg_err_div" ></div>
 				<div style="clear:both;"></div>
-				<form id="frm_register" name="frm_register" method="post" action="reg.php" >
+				<form id="frm_register" name="frm_register" method="post">
 					<input type="hidden" name="post_form" value="post" />
 					<div style="margin-top: 15px;" class="fieldset">
 						<div class="elements">
@@ -120,7 +176,7 @@ tep_db_connect();
 						</div>
 						<div class="elements">
 							<label for="name">Email <span style="color:red">*</span>: </label>
-							<input type="text" name="email" id="email" size="40" />
+							<input type="email" name="email" id="email" size="40" />
 							<input type="hidden" name="eamilAvble" id="eamilAvble" value="0" />
 						</div>
 						<div class="elements">

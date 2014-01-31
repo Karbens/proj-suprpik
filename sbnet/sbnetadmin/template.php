@@ -1,13 +1,22 @@
 <?php
 
-if(empty($_SESSION['UserID'])){
+if(!defined('IS_FRONTEND')){
+	define('IS_FRONTEND', false);
+}
+
+
+if( (IS_FRONTEND && !isset($_SESSION['user'])) || (!IS_FRONTEND && !isset($_SESSION['UserID'])) ){	
 	header("Location: login.php");
 	exit();
 }
 
+define('TEMPLATE_INCLUDED', true);
+
+
 	class template{
 
 		private $contest_id = 0;
+		public $frontend = IS_FRONTEND;
 		public $contest_name = '';
 		public $contest_desc = '';
 		public $contest_daily = false;
@@ -33,7 +42,7 @@ if(empty($_SESSION['UserID'])){
 
 			if($this->contest_id>0){
 
-				$query = "SELECT * FROM `events` WHERE `contest_id` = $this->contest_id";
+				$query = "SELECT * FROM `events` WHERE event_desc!='' AND `contest_id` = $this->contest_id";
 				$result = mysql_query($query);
 				$events = array();
 				if(@mysql_num_rows($result) > 0)
@@ -332,7 +341,7 @@ if(empty($_SESSION['UserID'])){
 
 
 //add all templates
-	$dir = 'templates';
+	$dir = dirname(__FILE__).'/templates';
 	if(is_dir($dir)){
 		$files = scandir($dir);
 		

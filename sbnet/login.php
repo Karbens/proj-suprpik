@@ -1,8 +1,13 @@
-<?
+<?php
 session_start();
+if(isset($_SESSION['user'])){
+	header('Location: index.php');
+	exit;
+}
+
 include_once('sbnetadmin/db_func.php');
 tep_db_connect();
-if(isset($_POST))
+if(isset($_POST['username'], $_POST['password']))
 {	
 	$UserName = trim($_POST['username']);
 	$Password = md5(trim($_POST['password']));
@@ -16,10 +21,12 @@ if(isset($_POST))
 	  echo 1;
 	}
 	else{
-		$_SESSION['logged_id'] = mysql_result($result,0,"signup_id");
-		$_SESSION['logged_name'] = mysql_result($result,0,"username");
+		$_SESSION['user'] = array( 'signup_id' => mysql_result($result,0,"signup_id"),
+								 	'username' => mysql_result($result,0,"username")
+								 	);
 		echo 0;
-		/* redirect to contests page */
 	}
-}	
-?>
+}else{
+	header('Location: index.php');
+	exit;
+}

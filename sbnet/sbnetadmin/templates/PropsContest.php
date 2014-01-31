@@ -1,8 +1,9 @@
 <?php
 
-if(empty($_SESSION['UserID'])){
-	header("Location: login.php");
-	exit();
-}
+	if(!defined('TEMPLATE_INCLUDED')){
+		header("Location: login.php");
+		exit();
+	}
+
 	class PropsContest extends template{
 }

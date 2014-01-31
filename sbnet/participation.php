@@ -1,28 +1,33 @@
 <?php
-//set time zone to eastern time zone
-date_default_timezone_set('America/New_York');
+session_start();
 include_once('sbnetadmin/db_func.php');
+include_once('sbnetadmin/contests_func.php');
+include_once('functions.php');
 tep_db_connect();
 
-$contest_id = $_GET['contest'];
-$contest_name = get_contest_name($contest_id);
-$today = date('Y-m-d');
-$today1 = date("Y-m-d", strtotime($today));
-$time = date('h:i');
-$que = "SELECT * FROM `events` 
-		WHERE event_desc != '' AND `contest_id` = ".$contest_id."
-		AND `event_date` >= '".$today."' 
-		AND `event_time` > '".$time."' ORDER BY `event_order`, `event_id`";
-//echo $que;
-$query = mysql_query($que);
-if(@mysql_num_rows($query) > 0)
-{
-	$events = array();
-	while ($row = mysql_fetch_array($query)) {
-	  $events[] = $row;
+	$contest_id = isset($_REQUEST['contest_id'])? (int)$_REQUEST['contest_id'] : 0;
+
+	$contests = get_contests($contest_id);
+
+	if($contest_id>0){
+		$contest = $contests[0];
+
+		$templates = get_templates();
+
+		if(class_exists($contest['template'])){
+
+			$contestObject = new $contest['template']($contest);
+
+		} else {
+			exit();
+
+		}
 	}
-}
-//print_r($events);
+
+
+
+	$events = $contestObject->getEvents();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -135,20 +140,15 @@ if(@mysql_num_rows($query) > 0)
 	});
 	
 	function save_choices(){
-		var count = 0;
-		var rdo_arr =[];
-		$('.rdo_class').each(function () {
-		
-		if($(this).is(':checked')){
-			rdo_arr[count] = $(this).val();
-			count=count+1;
+		if($('.rdo_class:checked').length<=0){
+			alert('Please select choices');
+			return false;
 		}
-        });
-		$.ajax({
+      $.ajax({
 			type: 'post',
-			url: 'ajax_participation.php',
+			url: 'ajax_participation.php?contest_id=<?php echo $contest_id; ?>',
 			async: false,
-			data: { choices: rdo_arr},
+			data: $('#contestForm').serialize(),
 			success: function (msg) {
 			  if(msg==1){
 				 $('#error_div').addClass('error_class');   
@@ -174,36 +174,32 @@ if(@mysql_num_rows($query) > 0)
 		<section id="hpMain" class="left">
 			<section id="featuredBets" class="tabs">
 				<header>
-					<h2><?php echo $contest_name; ?></h2>
+					<h2><?php echo $contestObject->contest_name; ?></h2>
 				</header>
 				<section class="wrapper" id="nfl-game-lines" style="">
 					<?php if(!empty($events)){ ?>
 						<form id="contestForm" name="contestForm" action="" method="post">
 							<?php $count = 1;
-								foreach($events as $ev){ 
-									$event_id = $ev['event_id']; ?>
+								foreach($events as $event){ 
+
+										$choices = $contestObject->getChoices($event['event_id']);
+								?>
 								<div class="event-container">
 									<div class="qNum">
 										<p><?php echo $count; ?></p>
 									</div>
 									<div class="question">
-										<p><?php echo $ev['event_desc']; ?></p>
+										<p><?php echo $event['event_desc']; ?></p>
 									</div>
 									<div style="margin: 50px 0px 0px 0px;">
-										<?php $que = 'SELECT * FROM `events_choices` WHERE event_id = '.$event_id.' ORDER BY `ec_order`, `ec_id`';
-												$query = mysql_query($que);
-												$ret = array();
-												if(@mysql_num_rows($query) > 0)
-												{
-													while($res = mysql_fetch_assoc($query))
-													{
-														$ret[] = $res;
-													}?>
-												<div class="noselect">
-													<input class="rdo_class" type="radio" id="rdo_<?php echo $ret[0]['ec_id']; ?>" name="rdo_<?php echo $ret[0]['ec_id']; ?>" value="<?php echo $ret[0]['ec_id']."_1"; ?>"> <?php echo $ret[0]['choice']; ?> </div>
-												<div style="margin-right: 3px;" class="noselect">
-													<input class="rdo_class" type="radio" id="rdo_<?php echo $ret[0]['ec_id']; ?>" name="rdo_<?php echo $ret[0]['ec_id']; ?>" value="<?php echo  $ret[0]['ec_id']."_0"; ?>"> <?php echo $ret[1]['choice']; ?></div>
-												<?php } ?>
+
+
+									<?php foreach ($choices as $key => $choice) { ?>
+
+										<div class="noselect">
+											<input class="rdo_class" type="radio" id="rdo_<?php echo $choice['ec_id']; ?>" name="choice[<?php echo $event['event_id']; ?>]" value="<?php echo $choice['ec_id']; ?>"> <?php echo $choice['choice']; ?>
+										</div>
+											<?php } ?>
 									</div>
 								</div>
 							<?php $count++;
@@ -244,4 +240,3 @@ if(@mysql_num_rows($query) > 0)
 </body>
 <script type="text/javascript" src="js/processPromo2.js?version=20120404"></script>
 </html>
-<?php tep_db_close(); ?>

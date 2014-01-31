@@ -1,8 +1,10 @@
 <?php
 
-if(empty($_SESSION['UserID'])){
+if(!defined('TEMPLATE_INCLUDED')){
+	
 	header("Location: login.php");
 	exit();
 }
+
 	class MarchMania extends template{
 }

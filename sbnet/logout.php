@@ -1,6 +1,7 @@
 <?php 
 	 session_start();
-	 unset($_SESSION['logged_id']);
-	 unset($_SESSION['logged_name']);
-    session_destroy();
-?>
+	 unset($_SESSION['user']['signup_id']);
+     session_destroy();
+
+	header('Location: index.php');
+	exit;

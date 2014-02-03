@@ -42,7 +42,9 @@ define('TEMPLATE_INCLUDED', true);
 
 			if($this->contest_id>0){
 
-				$query = "SELECT * FROM `events` WHERE event_desc!='' AND `contest_id` = $this->contest_id";
+				$condition = $this->frontend? " AND event_desc!=''" : "";
+
+				$query = "SELECT * FROM `events` WHERE `contest_id` = $this->contest_id" .$condition;
 				$result = mysql_query($query);
 				$events = array();
 				if(@mysql_num_rows($result) > 0)

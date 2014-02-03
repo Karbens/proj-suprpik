@@ -70,7 +70,14 @@ tep_db_connect();
 			.event-container > dl dd{ margin: -20px 0 10px 100px; border-bottom: solid 1px #fff; }
 			.event-container .select select { background: transparent; width: 180px; height: 18px; }
 			.event-container .select { margin:55px 0 15px 15px; width: 150px; height: 18px; overflow: hidden; background: url('i/select.jpg') no-repeat right #fff; border: 1px solid #ccc; }
-			.event-container .noselect { text-align: center; margin:5px 0px 5px 0px; font-size:13px; font-weight:bold; color: #000000;}
+			.event-container .noselect { 
+				/*text-align: center; */
+				margin: 5px 265px;
+				/*margin:5px 0px 5px 0px; */
+				font-size:13px; 
+				font-weight:bold; 
+				color: #000000;
+			}
 			.clear{ clear: both; }
 			.event-container .checkClass { margin:55px 0 20px 15px; width: 700px; height: 18px; }
 			.event-container .checkClass .checkbox {

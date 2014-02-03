@@ -1622,7 +1622,15 @@ class lines {
 	//local function for updating PinnacleSports lines
 	private function updatePSLines( ) {
 	
-		$xml_data = file_get_contents($this->feed);
+		$opts = array(
+			'http'=>array(
+				'method'=>"GET",
+				'header'=>"Authorization: Basic UEIxODgyOTI6YXNoZTQ0")
+			);
+		$context = stream_context_create($opts);
+
+		$xml_data = file_get_contents($this->feed, false, $context);
+		//	$xml_data = file_get_contents($this->feed);
 		$array =  $this->xml2array($xml_data, 1, 'attribute');
 		/*
 		echo "<pre>";

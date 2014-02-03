@@ -5,7 +5,6 @@ define('IS_FRONTEND', true);
 
 //set time zone to eastern time zone
 date_default_timezone_set('America/New_York');
-
 function get_active_contests(){
 
 	$now = date("Y-m-d H:i:s");

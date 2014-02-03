@@ -186,7 +186,7 @@ if( in_array('1',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 1;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=3&leagueid=246&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=3&leagueid=246&oddsformat=0&islive=0';
 }
 
 
@@ -196,7 +196,7 @@ if( in_array('4',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 4;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=889&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=889&oddsformat=0&islive=0';
 }
 
 
@@ -206,7 +206,7 @@ if( in_array('4',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 4;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=4347&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=4347&oddsformat=0&islive=0';
 }
 
 
@@ -216,7 +216,7 @@ if( in_array('7',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 7;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=880&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=880&oddsformat=0&islive=0';
 }
 
 
@@ -226,7 +226,7 @@ if( in_array('2',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 2;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=4&leagueid=487&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=4&leagueid=487&oddsformat=0&islive=0';
 }
 
 
@@ -236,7 +236,7 @@ if( in_array('3',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 3;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=4&leagueid=493&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=4&leagueid=493&oddsformat=0&islive=0';
 }
 
 
@@ -246,7 +246,7 @@ if( in_array('8',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 8;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=19&leagueid=1460&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=19&leagueid=1460&oddsformat=0&islive=0';
 }
 
 
@@ -256,7 +256,7 @@ if( in_array('6',$_settings['active']) )
 	$p++;
 	$ps_array[$p]['league_id'] = 6;
 	$ps_array[$p]['book_id'] = 5;
-	$ps_array[$p]['feed_url'] = 'http://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=876&clientid=PB188292&apikey=ad20feed-0f60-4e35-8abe-ccf8942a80c5&oddsformat=0&islive=0';
+	$ps_array[$p]['feed_url'] = 'https://api.pinnaclesports.com/v1/feed?sportid=15&leagueid=876&oddsformat=0&islive=0';
 }
 
 for($i=1;$i<=count($ps_array);$i++)

@@ -8,25 +8,28 @@ tep_db_connect();
 	$contest_id = isset($_REQUEST['contest_id'])? (int)$_REQUEST['contest_id'] : 0;
 
 	$contests = get_contests($contest_id);
-
+ 
+  $customer_id = $_SESSION['user']['signup_id'];
+	$selected_choices = get_customer_choices($contest_id,$customer_id);
+	
 	if($contest_id>0){
 		$contest = $contests[0];
-
+    
 		$templates = get_templates();
 
 		if(class_exists($contest['template'])){
 
 			$contestObject = new $contest['template']($contest);
-
+      
 		} else {
 			exit();
 
 		}
 	}
 
-
-
-	$events = $contestObject->getEvents();
+  $events = $contestObject->getEvents();
+  
+	
 
 ?>
 <!DOCTYPE html>
@@ -151,6 +154,24 @@ tep_db_connect();
 			alert('Please select choices');
 			return false;
 		}
+    var names = {};
+    $('input:radio').each(function() { // find unique names
+          names[$(this).attr('name')] = true;
+    });
+    var count = 0;
+    $.each(names, function() { // then count them
+          count++;
+    });
+    if($('input:radio:checked').length != count) {
+          alert("Answer all questions");
+          return false;
+    }
+    
+    if($('#hdn_choice_cnt').val()>0){
+       alert("You have alrady participated in this contest");
+       return false;
+     }
+
       $.ajax({
 			type: 'post',
 			url: 'ajax_participation.php?contest_id=<?php echo $contest_id; ?>',
@@ -184,6 +205,7 @@ tep_db_connect();
 					<h2><?php echo $contestObject->contest_name; ?></h2>
 				</header>
 				<section class="wrapper" id="nfl-game-lines" style="">
+				<input type="hidden" id="hdn_choice_cnt" value="<?php echo count($selected_choices); ?>">
 					<?php if(!empty($events)){ ?>
 						<form id="contestForm" name="contestForm" action="" method="post">
 							<?php $count = 1;
@@ -201,10 +223,15 @@ tep_db_connect();
 									<div style="margin: 50px 0px 0px 0px;">
 
 
-									<?php foreach ($choices as $key => $choice) { ?>
-
-										<div class="noselect">
-											<input class="rdo_class" type="radio" id="rdo_<?php echo $choice['ec_id']; ?>" name="choice[<?php echo $event['event_id']; ?>]" value="<?php echo $choice['ec_id']; ?>"> <?php echo $choice['choice']; ?>
+									<?php foreach ($choices as $key => $choice) { 
+									  $selected = '';
+                    foreach($selected_choices as $sel){
+                        if($sel['ec_id']==$choice['ec_id'])
+                          $selected="checked";
+                    }
+                  ?>
+                  	<div class="noselect">
+											<input <?php echo $selected; ?> class="rdo_class" type="radio" id="rdo_<?php echo $choice['ec_id']; ?>" name="choice[<?php echo $event['event_id']; ?>]" value="<?php echo $choice['ec_id']; ?>"> <?php echo $choice['choice']; ?>
 										</div>
 											<?php } ?>
 									</div>
